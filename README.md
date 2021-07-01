@@ -1,2 +1,2 @@
-# platform__dl-edu
-Repository for Dev Launchers Edu Project
+# platform__dl-ideas
+Repository for Dev Launchers Idea Platform
