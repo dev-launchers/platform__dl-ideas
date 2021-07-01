@@ -6,7 +6,7 @@
     "react",
     "starter"
   ],
-  "homepage": "https://edu.devlaunchers.com/",
+  "homepage": "https://idea.devlaunchers.com/",
   "main": "src/index.js",
   "dependencies": {
     "react": "17.0.2",
