@@ -1,4 +1,4 @@
-maname: Build & deploy
+name: Build & deploy
 
 on:
   push:
