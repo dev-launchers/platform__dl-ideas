@@ -9,8 +9,12 @@
   "homepage": "https://idea.devlaunchers.com/",
   "main": "src/index.js",
   "dependencies": {
+    "axios": "^0.21.1",
+    "constate": "^3.3.0",
     "react": "17.0.2",
     "react-dom": "17.0.2",
+    "react-redux": "^7.2.4",
+    "react-router-dom": "^5.2.0",
     "react-scripts": "4.0.0"
   },
   "devDependencies": {
@@ -28,5 +32,14 @@
     "not dead",
     "not ie <= 11",
     "not op_mini all"
-  ]
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dev-launchers/platform__dl-ideas.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/dev-launchers/platform__dl-ideas/issues"
+  }
 }
