@@ -1,11 +1,26 @@
 import "./styles.css";
+import { BrowserRouter, Link, Route, Switch } from 'react-router-dom';
+
+import Form from './components/form.js';
+import WelcomePage from './components/welcomepage.js';
 
 export default function App() {
   return (
     <div className="App">
-      <h1>DL-edu</h1>
-      <h2>Welcome to the project</h2>
-      <h2>GG WP</h2>
+      <BrowserRouter>
+        <nav>
+          <ul>
+            <li><Link to="/">Home</Link></li>
+            <li><Link to="/form">Form</Link></li>
+          </ul>
+        </nav>
+        <Switch>
+          <Route exact path="/" exact component={WelcomePage}/>
+          <Route exact path="/form" exact component = {Form}>
+            <Form/>
+          </Route>
+        </Switch>
+      </BrowserRouter>
     </div>
   );
 }
