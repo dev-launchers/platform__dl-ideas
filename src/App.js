@@ -1,7 +1,7 @@
 import "./styles.css";
 import { BrowserRouter, Link, Route, Switch } from 'react-router-dom';
 
-import Form from './components/form.js';
+import SubmitForm from './components/submitform.js';
 import WelcomePage from './components/welcomepage.js';
 
 export default function App() {
@@ -15,9 +15,9 @@ export default function App() {
           </ul>
         </nav>
         <Switch>
-          <Route exact path="/" exact component={WelcomePage}/>
-          <Route exact path="/form" exact component = {Form}>
-            <Form/>
+          <Route exact path="/" exact component = {WelcomePage}/>
+          <Route exact path="/form" exact component = {SubmitForm}>
+            <SubmitForm/>
           </Route>
         </Switch>
       </BrowserRouter>
