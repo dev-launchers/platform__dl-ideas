@@ -1,10 +1,12 @@
 import React, { useEffect, useState } from "react";
 import Tabletop from "tabletop";
+import { FeaturedIdeas } from "../FeaturedIdea/FeaturedIdea";
+import { IdeaCard } from "../GetSheetsData/StyledGetSheetsData";
 
-export default function App() {
+export default function GetSheetsData(props) {
   const [data, setData] = useState([]);
 
-  let getSheetsData = () => {
+  let fetchData = () => {
     Tabletop.init({
       key: "https://docs.google.com/spreadsheets/d/16RglFZM0lMvsGUmSV3QKti_cMsXSIFp6j7zMvTVxDlA/edit?usp=sharing",
       callback: showInfo,
@@ -18,7 +20,7 @@ export default function App() {
         console.warn(err);
       });
   };
-  React.useEffect(getSheetsData, []);
+  React.useEffect(fetchData, []);
 
   function showInfo(data, tabletop) {
     let tempData = [];
@@ -26,6 +28,8 @@ export default function App() {
       tempData.push({
         projectIdea: entry.projectIdea,
         projectAudience: entry.targetAudience,
+        timeCreated: entry.timestamp,
+        tags: entry.tags,
       });
     });
     console.log(tempData);
@@ -33,7 +37,6 @@ export default function App() {
   }
   return (
     <>
-      <h1>data from google sheets</h1>
       <div>
         {data.map(({ projectIdea, projectAudience }) => {
           return (
@@ -42,6 +45,9 @@ export default function App() {
               <br />
               <br />
               {projectAudience}
+              <br />
+
+              <br />
             </div>
           );
         })}
