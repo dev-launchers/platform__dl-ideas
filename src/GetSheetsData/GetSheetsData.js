@@ -40,11 +40,8 @@ export default function GetSheetsData(props) {
       <div>
         {data.map(({ projectIdea, projectAudience }) => {
           return (
-            <div key={`${projectIdea}_${projectAudience}`}>
+            <div key={`${projectIdea}`}>
               {projectIdea}
-              <br />
-              <br />
-              {projectAudience}
               <br />
 
               <br />
