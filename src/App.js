@@ -3,10 +3,14 @@ import { BrowserRouter, Link, Route, Switch } from 'react-router-dom';
 
 import SubmitForm from './components/submitform.js';
 import WelcomePage from './components/welcomepage.js';
+import { UserDataProvider } from "./UserDataContext";
+import Header from "./components/Header/"
 
 export default function App() {
   return (
+    <UserDataProvider>
     <div className="App">
+      <Header></Header>
       <BrowserRouter>
         <nav>
           <ul>
@@ -22,5 +26,6 @@ export default function App() {
         </Switch>
       </BrowserRouter>
     </div>
+    </UserDataProvider>
   );
 }

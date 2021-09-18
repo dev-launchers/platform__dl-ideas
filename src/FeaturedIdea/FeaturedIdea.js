@@ -1,4 +1,4 @@
-import { data } from "../GetSheetsData/GetSheetsData";
+//import { data } from "../GetSheetsData/GetSheetsData";
 import React from "react";
 
 const FeaturedIdeas = ({ data }) => {
@@ -8,3 +8,4 @@ const FeaturedIdeas = ({ data }) => {
 };
 
 export default FeaturedIdeas;
+
