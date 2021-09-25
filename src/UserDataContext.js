@@ -36,6 +36,7 @@ function useUserData() {
       withCredentials: true,
     })
       .then(({ data: currentUser }) => {
+        console.log(currentUser);
         setUserData({
           id: currentUser.id,
           name: currentUser.profile.displayName,
@@ -50,7 +51,8 @@ function useUserData() {
           volunteerHours: currentUser.point.volunteerHours,
         });
       })
-      .catch(() => {
+      .catch((err) => {
+        console.log(err);
         // setUserData({ id: "invalid" });
       });
   }, []);
