@@ -9,6 +9,7 @@ const rootElement = document.getElementById("root");
 ReactDOM.render(
   <StrictMode>
     <GetSheetsData />
+    <App />
   </StrictMode>,
   rootElement
 );
