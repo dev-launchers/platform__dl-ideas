@@ -10,13 +10,31 @@ import CardsWrapper from "./components/CardsWrapper/StyledCardsWrapper";
 import Card from "./components/Card/Card.js";
 
 export default function App() {
-  const [cards, setCards] = React.useState({
+
+  const [cards, setCards] = React.useState([{
     project: 'Thought Process',
     description: 'An online, community-based idea or problem solving tool',
     type: 'Web Development',
     positions: 'Developer, Digital Artist, UX/UI, Marketing',
     time: '5 hrs'
-  });
+  },
+  {
+    project: 'Ergonomic Digits',
+    description: 'Create an Ergonomic layout for mobile screens with the goal of minimizing thumb movement',
+    type: 'AI / ML',
+    positions: 'Developer',
+    time: '3 - 5 hrs'
+  },
+  {
+    project: 'Dev Mentors',
+    description: 'Connecting Individuals Seeking Mentorship with Potential Mentors Based on their Area of Interest',
+    type: 'Web Development',
+    positions: 'AI / ML',
+    time: '10 hrs'
+  }
+]
+);
+    
 
   return (
     <div className="App">
@@ -36,7 +54,10 @@ export default function App() {
           <Route exact path="/cards">
             <IdeaCards>
               <CardsWrapper>
-                <Card cards={cards} />
+                {cards.map((item, index) => {
+                  return <Card key={index} cards={item} />
+                })}
+                
               </CardsWrapper>
             </IdeaCards>
           </Route>
