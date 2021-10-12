@@ -7,6 +7,7 @@ import {
   AccountMenuDropdownButton,
   MenuButton,
 } from "./StyledAccountDropdown";
+import axios from "axios";
 
 export default function AccountDropdown(props) {
   return (
@@ -27,7 +28,8 @@ export default function AccountDropdown(props) {
           }
         ></AccountMenuDropdownButton>
       ) : (
-        <MenuButton fontSize="1.2rem" href="http://localhost:1337/connect/google">
+        <MenuButton fontSize="1.2rem" href='env().GOOGLE_AUTH_URL'>
+        //
           Sign In{" "}
         </MenuButton>
       )}

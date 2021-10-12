@@ -2,8 +2,9 @@ import React , { Component, useState } from 'react';
 import { Button, Form, Container, Header, Dropdown } from 'semantic-ui-react';
 import axios from 'axios';
 
-const url = 'https://cms-api-staging.devlaunchers.com/idea-cards'; 
-//http://localhost:1337/idea-cards
+const url = 'https://cms-api-staging.devlaunchers.com/idea-cards'
+//'http://localhost:1337/idea-cards';
+
 
 const skillsOptions = [
     {key: 'python', text: 'Python', value: 'python'},
@@ -35,10 +36,7 @@ export default class SubmitForm extends Component{
             skills: [],
             openPositions: [],
             author: '',
-            difficultyLevel: '',
-            published_at: new Date(),
-            created_by: '',
-            updated_by: ''
+            difficultyLevel: ''
         }
     }
 
@@ -66,17 +64,14 @@ export default class SubmitForm extends Component{
             skills: [],
             openPositions: [],
             author: '',
-            difficultyLevel: '',
-            published_at: new Date(),
-            created_by: 'test',
-            updated_by: 'test'
+            difficultyLevel: ''
         })
         console.log(this.state);
     };
 
     render(){
         const  { ideaName, tagline, description, targetAudience, hourCommitmentMin,
-            hourCommitmentMax, skills, openPositions, author, difficultyLevel }  = this.state;
+            hourCommitmentMax, skillsOptions, openPositionsOptions, author, difficultyLevel }  = this.state;
         return (
             <Container fluid className = 'container' id='formWrapper'>
                 <Header as='h1'>Submit your idea!!!</Header>

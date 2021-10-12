@@ -32,7 +32,7 @@ function useUserData() {
 
   React.useEffect(() => {
     // Setting timeout because of environment variable hack
-    axios(`${env().STRAPI_URL}/users/me`, {
+    axios('${env().STRAPI_URL}/users/me', {
       withCredentials: true,
     })
       .then(({ data: currentUser }) => {
