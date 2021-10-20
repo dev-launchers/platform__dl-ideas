@@ -8,6 +8,7 @@ import React from 'react';
 import IdeaCards from "./components/IdeaCards/StyledIdeaCards";
 import CardsWrapper from "./components/CardsWrapper/StyledCardsWrapper";
 import Card from "./components/Card/Card.js";
+import { env } from "./utils/EnvironmentalVariables";
 
 export default function App() {
 
@@ -34,6 +35,25 @@ export default function App() {
   }
 ]
 );
+
+React.useEffect(() => {
+  fetch(`${env().STRAPI_URL}/idea-cards/`, {
+    method: "GET",
+    headers: {
+      "Content-Type": "application/json"
+    },
+  })
+  .then((response) => {
+    if (response.ok){
+      return response.json();
+    }
+    return Promise.reject();
+  })
+  .then((response) => {
+    console.log(response);
+  })
+  .catch((err) => console.log(err));
+}, []);
     
 
   return (
@@ -57,7 +77,6 @@ export default function App() {
                 {cards.map((item, index) => {
                   return <Card key={index} cards={item} />
                 })}
-                
               </CardsWrapper>
             </IdeaCards>
           </Route>
