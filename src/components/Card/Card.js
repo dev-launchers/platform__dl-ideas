@@ -28,7 +28,7 @@ function Card({ cards }) {
       </Tab>
       <HeaderCard>
         <HeaderContent>
-          <HeaderTitle>{cards.project}</HeaderTitle>
+          <HeaderTitle>{cards.ideaName}</HeaderTitle>
           <HeaderDescription>{cards.description}</HeaderDescription>
         </HeaderContent>
       </HeaderCard>
@@ -36,15 +36,32 @@ function Card({ cards }) {
         <MainList>
           <MainCell>
             <CellTitle>Project Type</CellTitle>
-            <CellText>{cards.type}</CellText>
+            <CellText>
+            {
+            cards.skills.map((skill, index) => {
+                if (index === cards.skills.length - 1)
+                {
+                  return skill.skill;
+                }
+                return skill.skill + ' / ';
+              })}
+            </CellText>
           </MainCell>
           <MainCellBorders>
             <CellTitle>Positions Available</CellTitle>
-            <CellText>{cards.positions}</CellText>
+            <CellText>
+              {cards.openPositions.map((position, index) => {
+                if (index === cards.openPositions.length - 1)
+                {
+                  return position.title;
+                }
+                return position.title + ' ';
+              })}
+            </CellText>
           </MainCellBorders>
           <MainCell>
             <CellTitle>Time Commitment</CellTitle>
-            <CellText>{cards.time}</CellText>
+            <CellText>{`${cards.hourCommitmentMin} - ${cards.hourCommitmentMax}`} hrs</CellText>
           </MainCell>
         </MainList>
       </MainCard>

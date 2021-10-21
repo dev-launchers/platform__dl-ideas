@@ -16,10 +16,13 @@ export default class SubmitForm extends Component{
             targetAudience: '',
             hourCommitmentMin: 0,
             hourCommitmentMax: 0,
-            skills: [ {skill: 'Programming'} ],
+            skills: [ 
+                {skill: 'Web Development'},
+                {skill: 'AI / ML'},
+            ],
             openPositions: [
                 { 
-                    title: 'Developer',
+                    title: 'Developer, UX/UI',
                     description: 'Lots of programming',
                     isHidden: false
                 }
@@ -45,6 +48,13 @@ export default class SubmitForm extends Component{
             .then(response => {
                 console.log(response);
         });
+
+        this.setState({
+            ideaName: '',
+            targetAudience: '',
+            description: '',
+            tagline: '',
+        })
 
     };
 

@@ -9,51 +9,23 @@ import IdeaCards from "./components/IdeaCards/StyledIdeaCards";
 import CardsWrapper from "./components/CardsWrapper/StyledCardsWrapper";
 import Card from "./components/Card/Card.js";
 import { env } from "./utils/EnvironmentalVariables";
+import axios from "axios";
 
 export default function App() {
 
-  const [cards, setCards] = React.useState([{
-    project: 'Thought Process',
-    description: 'An online, community-based idea or problem solving tool',
-    type: 'Web Development',
-    positions: 'Developer, Digital Artist, UX/UI, Marketing',
-    time: '5 hrs'
-  },
-  {
-    project: 'Ergonomic Digits',
-    description: 'Create an Ergonomic layout for mobile screens with the goal of minimizing thumb movement',
-    type: 'AI / ML',
-    positions: 'Developer',
-    time: '3 - 5 hrs'
-  },
-  {
-    project: 'Dev Mentors',
-    description: 'Connecting Individuals Seeking Mentorship with Potential Mentors Based on their Area of Interest',
-    type: 'Web Development',
-    positions: 'AI / ML',
-    time: '10 hrs'
-  }
-]
-);
+  const [cards, setCards] = React.useState([]);
 
-React.useEffect(() => {
-  fetch(`${env().STRAPI_URL}/idea-cards/`, {
-    method: "GET",
-    headers: {
-      "Content-Type": "application/json"
-    },
-  })
-  .then((response) => {
-    if (response.ok){
-      return response.json();
-    }
-    return Promise.reject();
-  })
-  .then((response) => {
-    console.log(response);
-  })
-  .catch((err) => console.log(err));
-}, []);
+  React.useEffect(() => {
+    axios.get(`${env().STRAPI_URL}/idea-cards/`)
+    .then(response => {
+        const getCards = response.data.map((item) => {
+          return item;
+        });
+        
+        setCards(getCards);
+    });
+    
+  }, []);
     
 
   return (
@@ -74,8 +46,8 @@ React.useEffect(() => {
           <Route exact path="/cards">
             <IdeaCards>
               <CardsWrapper>
-                {cards.map((item, index) => {
-                  return <Card key={index} cards={item} />
+                {cards.map((item) => {
+                  return <Card key={item.id} cards={item} />
                 })}
               </CardsWrapper>
             </IdeaCards>
