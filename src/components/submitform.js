@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { Button, Form, Container, Header } from 'semantic-ui-react';
 import axios from 'axios';
 
@@ -9,42 +9,29 @@ const SubmitForm = () => {
   const [targetAudience, setTargetAudience] = useState('');
   const [notes, setNotes] = useState('');
   const [tags, setTags] = useState('');
-  const [data, setData] = useState(null);
-  const getData = () =>
-    fetch('https://cms-api-staging.devlaunchers.com/idea-cards')
-      .then((res) => res.json())
 
-  useEffect(() => {
-    getData().then((data) => setData(data))
-  }, [])
-
-
-
-
-
-  const submitHandler = e => {
+  const submitHandler = (e) => {
     e.preventDefault();
     let currentTime = new Date().toLocaleDateString('en-US');
     setTimeStamp({ timeStamp: currentTime });
     const ideaInfo = {
-      created_at: timeStamp,
-      description: notes,
+      timeStamp: timeStamp,
+      projectIdea: projectIdea,
       targetAudience: targetAudience,
-      ideaName: projectIdea,
-      tagline: tags,
+      notes: notes,
+      tags: tags,
     }
-    axios.post('https://cms-api-staging.devlaunchers.com/idea-cards', ideaInfo)
+    axios
+      .post('https://sheet.best/api/sheets/80b3b2ab-831f-4049-a81a-0713020b673b', ideaInfo)
       .then(response => {
-        alert('Your idea has been submitted successfully');
+        console.log(response)
       })
-      .catch(e => {
-        alert(`Oops there was an error`)
-        console.log(`Error updating the user info.`);
-      });
-
-  };
-
-  console.log()
+    setTimeStamp(new Date());
+    setProjectIdea('');
+    setTargetAudience('');
+    setNotes('');
+    setTags('')
+  }
 
   return (
     <Container fluid className='container' id='formWrapper'>
