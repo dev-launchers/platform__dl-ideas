@@ -4,3 +4,5 @@ Repository for Dev Launchers Idea Platform
 haniya was here
 
 ## UNDER CONSTRUCTION
+
+## Instructions for Environment Variables
