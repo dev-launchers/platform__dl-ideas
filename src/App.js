@@ -17,16 +17,16 @@ export default function App() {
 
   React.useEffect(() => {
     axios.get(`${env().STRAPI_URL}/idea-cards/`)
-    .then(response => {
+      .then(response => {
         const getCards = response.data.map((item) => {
           return item;
         });
-        
+
         setCards(getCards);
-    });
-    
+      });
+
   }, []);
-    
+
 
   return (
     <div className="App">
@@ -39,9 +39,9 @@ export default function App() {
           </ul>
         </nav>
         <Switch>
-          <Route exact path="/" exact component = {WelcomePage}/>
-          <Route exact path="/form" exact component = {SubmitForm}>
-            <SubmitForm/>
+          <Route exact path="/" exact component={WelcomePage} />
+          <Route exact path="/form" exact component={SubmitForm}>
+            <SubmitForm />
           </Route>
           <Route exact path="/cards">
             <IdeaCards>
@@ -54,6 +54,6 @@ export default function App() {
           </Route>
         </Switch>
       </BrowserRouter>
-    </div>
+    </div >
   );
 }
