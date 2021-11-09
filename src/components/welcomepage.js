@@ -1,6 +1,6 @@
 import render from 'dom-serializer';
 import React from 'react';
-import SubmitIdea from './SubmitIdea';
+import SubmitIdea from '../components/SubmitIdea/SubmitIdea';
 
 export default function WelcomePage() {
   return (

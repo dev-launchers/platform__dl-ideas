@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 
-import { env } from '../utils/EnvironmentalVariables';
+import { env } from '../../utils/EnvironmentalVariables';
 
 import {
   Wrapper,
