@@ -3,6 +3,7 @@ import { BrowserRouter, Link, Route, Switch } from 'react-router-dom';
 
 import SubmitForm from './components/submitform.js';
 import WelcomePage from './components/welcomepage.js';
+import Comments from './components/Comments/Comments';
 
 import React from 'react';
 import IdeaCards from "./components/IdeaCards/StyledIdeaCards";
@@ -52,6 +53,7 @@ export default function App() {
               </CardsWrapper>
             </IdeaCards>
           </Route>
+          <Route exact path="/comments" component={Comments} />
         </Switch>
       </BrowserRouter>
     </div >
