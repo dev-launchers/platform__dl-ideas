@@ -3,7 +3,7 @@ import { BrowserRouter, Link, Route, Switch } from 'react-router-dom';
 
 import SubmitForm from './components/submitform.js';
 import WelcomePage from './components/welcomepage.js';
-import Comments from './components/Comments/Comments';
+import Comments from './components/Comments/CommentBox';
 
 import React from 'react';
 import IdeaCards from "./components/IdeaCards/StyledIdeaCards";
