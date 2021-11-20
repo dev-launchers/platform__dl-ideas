@@ -1,18 +1,19 @@
 function CommentForm(props) {
 
   const handleChange = (e) => {
-    e.preventDefault();
-    console.log('test')
+    props.setHandleChange(e.target.value)
   }
 
   const handleTextChange = (e) => {
-    e.preventDefault();
-    console.log('test2')
+    props.setHandleTextChange(e.target.value)
   }
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log('test3');
+    props.setData([
+      ...props.data,
+      { _id: 4, author: props.handleChange, text: props.handleTextChange, updatedAt: new Date(), createdAt: new Date() }
+    ])
   }
 
   return (
@@ -21,14 +22,14 @@ function CommentForm(props) {
         type="text"
         name="author"
         placeholder="Your name..."
-        value={props.author}
+        value={props.handleChange}
         onChange={handleChange}
       />
       <input
         type="text"
         name="text"
         placeholder="Say something..."
-        value={props.text}
+        value={props.handleTextChange}
         onChange={handleTextChange}
       />
       <button type="submit">Submit</button>
