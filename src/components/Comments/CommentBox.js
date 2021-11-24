@@ -18,7 +18,6 @@ function Comments() {
   return (
     <div className="container">
       <div className="comments">
-        <h2>Comments:</h2>
         <CommentList data={data} />
       </div>
       <div className="form">
