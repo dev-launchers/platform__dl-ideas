@@ -32,16 +32,16 @@
 
 .singleCommentContent {
   width: 75%;
-  min-width: 600px;
+  min-width: 590px;
   background-color: #444D58;
   color: #C4C4C4;
   border-radius: 25px;
-  padding: 10px;
+  padding: 20px;
   display: inline-flex;
 }
 
 .userImage {
-  height: 35px;
+  height: 60px;
   margin-right: 10px;
   border-radius: 50%;
 }
@@ -97,6 +97,7 @@
   height: 80px;
   padding-left: 10px;
   border: 1px solid #c1c1c1;
+  background-color: #C3C0C0;
   margin-right: 10px;
   border-radius: 25px;
   width: 100%;
@@ -109,9 +110,12 @@
 
 .form button {
   margin-top: 10px;
-  color: #999;
-  border-radius: 5px;
+  padding: 8px 30px;
+  color: black;
+  font-weight: bold;
+  border-radius: 25px;
   border: 1px solid #999;
+  background-color: #C3C0C0;
 }
 
 .form button:hover {

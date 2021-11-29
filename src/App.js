@@ -53,7 +53,7 @@ export default function App() {
               </CardsWrapper>
             </IdeaCards>
           </Route>
-          <Route exact path="/comments" component={Comments} />
+          <Route exact path="/comments/:id" component={Comments} />
         </Switch>
       </BrowserRouter>
     </div >
