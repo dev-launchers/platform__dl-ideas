@@ -28,7 +28,7 @@ function CommentForm(props) {
       <input
         type="text"
         name="text"
-        placeholder="Say something..."
+        placeholder="What are your thoughts?"
         value={props.handleTextChange}
         onChange={handleTextChange}
       />

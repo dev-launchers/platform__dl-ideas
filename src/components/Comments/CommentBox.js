@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import CommentList from './CommentList';
 import CommentForm from './CommentForm';
+import Idea from './Idea';
 import './test.css';
 
 function Comments() {
@@ -17,11 +18,12 @@ function Comments() {
 
   return (
     <div className="container">
-      <div className="comments">
-        <CommentList data={data} />
-      </div>
+      <Idea />
       <div className="form">
         <CommentForm setHandleChange={setHandleChange} data={data} setData={setData} handleChange={handleChange} setHandleTextChange={setHandleTextChange} handleTextChange={handleTextChange} />
+      </div>
+      <div className="comments">
+        <CommentList data={data} />
       </div>
     </div>
   );
