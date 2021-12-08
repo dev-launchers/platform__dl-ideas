@@ -19,7 +19,7 @@ import CellText from './CellText/StyledCellText';
 
 import { Link } from 'react-router-dom';
 
-function Card({ cards }) {
+function Card({ cards, setSelectedCard }) {
 
   console.log(cards.id)
 
@@ -68,7 +68,7 @@ function Card({ cards }) {
         </MainList>
       </MainCard>
       <FooterCard>
-        <FooterLink><Link to={`/comments/${cards.id}`} >See More &#62;</Link></FooterLink>
+        <FooterLink><Link onClick={() => { setSelectedCard(cards) }} to={`/comments/${cards.id}`} >See More &#62;</Link></FooterLink>
       </FooterCard>
     </CardWrapper>
   )

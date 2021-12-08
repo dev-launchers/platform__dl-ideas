@@ -4,7 +4,7 @@ import CommentForm from './CommentForm';
 import Idea from './Idea';
 import './test.css';
 
-function Comments() {
+function Comments(props) {
 
   const [data, setData] = useState(
     [
@@ -14,11 +14,9 @@ function Comments() {
   const [handleChange, setHandleChange] = useState('');
   const [handleTextChange, setHandleTextChange] = useState('');
 
-
-
   return (
     <div className="container">
-      <Idea />
+      <Idea selectedCard={props.selectedCard} />
       <div className="form">
         <CommentForm setHandleChange={setHandleChange} data={data} setData={setData} handleChange={handleChange} setHandleTextChange={setHandleTextChange} handleTextChange={handleTextChange} />
       </div>

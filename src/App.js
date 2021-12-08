@@ -5,7 +5,7 @@ import SubmitForm from './components/submitform.js';
 import WelcomePage from './components/welcomepage.js';
 import Comments from './components/Comments/CommentBox';
 
-import React from 'react';
+import React, { useState } from 'react';
 import IdeaCards from "./components/IdeaCards/StyledIdeaCards";
 import CardsWrapper from "./components/CardsWrapper/StyledCardsWrapper";
 import Card from "./components/Card/Card.js";
@@ -15,6 +15,7 @@ import axios from "axios";
 export default function App() {
 
   const [cards, setCards] = React.useState([]);
+  const [selectedCard, setSelectedCard] = useState({});
 
   React.useEffect(() => {
     axios.get(`${env().STRAPI_URL}/idea-cards/`)
@@ -27,7 +28,6 @@ export default function App() {
       });
 
   }, []);
-
 
   return (
     <div className="App">
@@ -48,12 +48,14 @@ export default function App() {
             <IdeaCards>
               <CardsWrapper>
                 {cards.map((item) => {
-                  return <Card key={item.id} cards={item} />
+                  return <Card key={item.id} cards={item} setSelectedCard={setSelectedCard} />
                 })}
               </CardsWrapper>
             </IdeaCards>
           </Route>
-          <Route exact path="/comments/:id" component={Comments} />
+          <Route exact path="/comments/:id">
+            <Comments ideaName={selectedCard.ideaName} selectedCard={selectedCard} />
+          </Route>
         </Switch>
       </BrowserRouter>
     </div >
