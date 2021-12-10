@@ -10,7 +10,8 @@ function Idea(props) {
         <p>{props.selectedCard.tagline}</p>
       </div>
       <div className="description">
-        <h4>{props.selectedCard.description}</h4>
+        <h4>Description</h4>
+        <p>{props.selectedCard.description}</p>
       </div>
     </div>
   )
