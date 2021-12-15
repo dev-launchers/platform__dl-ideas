@@ -1,4 +1,3 @@
-import PropTypes from 'prop-types';
 import Comment from './Comment';
 
 
@@ -13,18 +12,6 @@ function CommentList(props) {
       {commentNodes}
     </div>
   );
-};
-
-CommentList.propTypes = {
-  data: PropTypes.arrayOf(PropTypes.shape({
-    author: PropTypes.string,
-    id: PropTypes.string,
-    text: PropTypes.string,
-  })),
-};
-
-CommentList.defaultProps = {
-  data: [],
 };
 
 export default CommentList;

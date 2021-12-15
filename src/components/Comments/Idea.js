@@ -1,5 +1,5 @@
 
-import './test.css';
+import './comments.css';
 
 function Idea(props) {
 

@@ -2,14 +2,14 @@ import React, { useState } from 'react';
 import CommentList from './CommentList';
 import CommentForm from './CommentForm';
 import Idea from './Idea';
-import './test.css';
+import './comments.css';
 
 function Comments(props) {
 
   const [data, setData] = useState(
     [
-      { _id: 1, author: 'Bryan', text: 'Wow this is neat', updatedAt: new Date(), createdAt: new Date() },
-      { _id: 2, author: 'You', text: 'Thank you', updatedAt: new Date(), createdAt: new Date() },
+      { _id: 1, author: 'Bryan', text: 'Hello', updatedAt: new Date(), createdAt: new Date() },
+      { _id: 2, author: 'You', text: 'Hi', updatedAt: new Date(), createdAt: new Date() },
     ]);
   const [handleChange, setHandleChange] = useState('');
   const [handleTextChange, setHandleTextChange] = useState('');
