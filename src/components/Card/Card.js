@@ -17,7 +17,11 @@ import MainCellBorders from './MainCellBorders/StyledMainCellBorders';
 import CellTitle from './CellTitle/StyledCellTitle';
 import CellText from './CellText/StyledCellText';
 
-function Card({ cards }) {
+import { Link } from 'react-router-dom';
+
+function Card({ cards, setSelectedCard }) {
+
+  console.log(cards.id)
 
   return (
     <CardWrapper>
@@ -37,22 +41,20 @@ function Card({ cards }) {
           <MainCell>
             <CellTitle>Project Type</CellTitle>
             <CellText>
-            {
-            cards.skills.map((skill, index) => {
-                if (index === cards.skills.length - 1)
-                {
-                  return skill.skill;
-                }
-                return skill.skill + ' / ';
-              })}
+              {
+                cards.skills.map((skill, index) => {
+                  if (index === cards.skills.length - 1) {
+                    return skill.skill;
+                  }
+                  return skill.skill + ' / ';
+                })}
             </CellText>
           </MainCell>
           <MainCellBorders>
             <CellTitle>Positions Available</CellTitle>
             <CellText>
               {cards.openPositions.map((position, index) => {
-                if (index === cards.openPositions.length - 1)
-                {
+                if (index === cards.openPositions.length - 1) {
                   return position.title;
                 }
                 return position.title + ' ';
@@ -66,7 +68,7 @@ function Card({ cards }) {
         </MainList>
       </MainCard>
       <FooterCard>
-        <FooterLink>See More &#62;</FooterLink>
+        <FooterLink><Link onClick={() => { setSelectedCard(cards) }} to={`/comments/${cards.id}`} >See More &#62;</Link></FooterLink>
       </FooterCard>
     </CardWrapper>
   )
