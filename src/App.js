@@ -18,7 +18,7 @@ export default function App() {
   const [selectedCard, setSelectedCard] = useState({});
 
   React.useEffect(() => {
-    axios.get(`${env().STRAPI_URL}/idea-cards/`)
+    axios.get(`https://api-staging.devlaunchers.org/idea-cards/`)
       .then(response => {
         const getCards = response.data.map((item) => {
           return item;
