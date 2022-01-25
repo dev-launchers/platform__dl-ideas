@@ -9,7 +9,7 @@ import React, { useState } from 'react';
 import IdeaCards from "./components/IdeaCards/StyledIdeaCards";
 import CardsWrapper from "./components/CardsWrapper/StyledCardsWrapper";
 import Card from "./components/Card/Card.js";
-import { env } from "./utils/EnvironmentalVariables";
+import { env } from "./utils/EnvironmentVariables";
 import axios from "axios";
 
 export default function App() {
