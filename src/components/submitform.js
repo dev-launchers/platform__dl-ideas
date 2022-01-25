@@ -2,7 +2,7 @@ import axios from 'axios';
 import React, { useState } from 'react';
 import { Button, Form, Container, Header } from 'semantic-ui-react';
 
-import { env } from '../utils/EnvironmentalVariables';
+import { env } from '../utils/EnvironmentVariables';
 
 function SubmitForm() {
 
