@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/platform__dl-ideas/static/css/main.72e6539f.chunk.css",
-    "main.js": "/platform__dl-ideas/static/js/main.727e4bc8.chunk.js",
-    "main.js.map": "/platform__dl-ideas/static/js/main.727e4bc8.chunk.js.map",
+    "main.js": "/platform__dl-ideas/static/js/main.bdae6bca.chunk.js",
+    "main.js.map": "/platform__dl-ideas/static/js/main.bdae6bca.chunk.js.map",
     "runtime-main.js": "/platform__dl-ideas/static/js/runtime-main.d32b6659.js",
     "runtime-main.js.map": "/platform__dl-ideas/static/js/runtime-main.d32b6659.js.map",
     "static/css/2.92d8b733.chunk.css": "/platform__dl-ideas/static/css/2.92d8b733.chunk.css",
@@ -21,6 +21,6 @@
     "static/css/2.92d8b733.chunk.css",
     "static/js/2.a092e724.chunk.js",
     "static/css/main.72e6539f.chunk.css",
-    "static/js/main.727e4bc8.chunk.js"
+    "static/js/main.bdae6bca.chunk.js"
   ]
 }
