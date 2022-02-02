@@ -31,7 +31,7 @@ export default function App() {
 
   return (
     <div className="App">
-      <BrowserRouter>
+      <BrowserRouter basename="platform__dl-ideas">
         <nav>
           <ul>
             <li><Link to="/">Home</Link></li>
