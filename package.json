@@ -6,7 +6,7 @@
     "react",
     "starter"
   ],
-  "homepage": "https://dev-launchers.github.io/platform__dl-ideas/",
+  "homepage": "https://idea.devlaunchers.com/",
   "main": "src/index.js",
   "dependencies": {
     "axios": "^0.21.1",

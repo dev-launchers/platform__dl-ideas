@@ -37,7 +37,6 @@ export default function GetSheetsData(props) {
   }
   return (
     <>
-   
       <div>
         {data.map(({ projectIdea, projectAudience }) => {
           return (
