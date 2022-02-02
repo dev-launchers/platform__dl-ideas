@@ -19,7 +19,11 @@ export default function App() {
 
   React.useEffect(() => {
     //axios.get('http://localhost:1337/idea-cards/')
-    axios.get(`${env().STRAPI_URL}/idea-cards/`)
+    axios.get(`${env().STRAPI_URL}/idea-cards/`,
+      {
+        withCredentials: true,
+      }
+    )
       .then(response => {
         const getCards = response.data.map((item) => {
           return item;
@@ -27,12 +31,11 @@ export default function App() {
 
         setCards(getCards);
       });
-
   }, []);
 
   return (
     <div className="App">
-      <BrowserRouter basename="platform__dl-ideas">
+      <BrowserRouter>
         <nav>
           <ul>
             <li><Link to="/">Home</Link></li>
