@@ -1,3 +1,5 @@
+import axios from "axios"
+
 function CommentForm(props) {
 
   const handleChange = (e) => {
@@ -10,10 +12,12 @@ function CommentForm(props) {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    props.setData([
-      ...props.data,
-      { _id: 4, author: props.handleChange, text: props.handleTextChange, updatedAt: new Date(), createdAt: new Date() }
-    ])
+    var data = { author: props.handleChange, text: props.handleTextChange }
+
+    axios.post(`http://localhost:1337/idea-cards/${props.selectedCard.id}/comment`, data)
+      .then(response => {
+        console.log(response)
+      })
   }
 
   return (
@@ -25,13 +29,16 @@ function CommentForm(props) {
         value={props.handleChange}
         onChange={handleChange}
       />
-      <input
-        type="text"
-        name="text"
-        placeholder="What are your thoughts?"
-        value={props.handleTextChange}
-        onChange={handleTextChange}
-      />
+      <div className="user_comment">
+        <img alt="user_image" className="userImageOne" src={`https://picsum.photos/70?random=${props.id}`} />
+        <input
+          type="text"
+          name="text"
+          placeholder="What are your thoughts?"
+          value={props.handleTextChange}
+          onChange={handleTextChange}
+        />
+      </div>
       <button type="submit">Submit</button>
     </form>
   );
