@@ -4,6 +4,7 @@ import { BrowserRouter, Link, Route, Switch } from 'react-router-dom';
 import SubmitForm from './components/submitform.js';
 import WelcomePage from './components/welcomepage.js';
 import Comments from './components/Comments/CommentBox';
+import Nav from './components/Nav/nav';
 
 import React, { useState } from 'react';
 import IdeaCards from "./components/IdeaCards/StyledIdeaCards";
@@ -19,7 +20,7 @@ export default function App() {
 
   React.useEffect(() => {
     //axios.get('http://localhost:1337/idea-cards/')
-    axios.get(`${env().STRAPI_URL}/idea-cards/`,
+    axios.get(`https://api-staging.devlaunchers.org/idea-cards`,
       {
         withCredentials: true,
       }
@@ -36,13 +37,7 @@ export default function App() {
   return (
     <div className="App">
       <BrowserRouter>
-        <nav>
-          <ul>
-            <li><Link to="/">Home</Link></li>
-            <li><Link to="/form">Form</Link></li>
-            <li><Link to="/cards">Cards</Link></li>
-          </ul>
-        </nav>
+        <Nav />
         <Switch>
           <Route exact path="/" exact component={WelcomePage} />
           <Route exact path="/form" exact component={SubmitForm}>
