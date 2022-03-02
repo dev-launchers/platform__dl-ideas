@@ -4,6 +4,7 @@ import { BrowserRouter, Link, Route, Switch } from 'react-router-dom';
 import SubmitForm from './components/submitform.js';
 import WelcomePage from './components/welcomepage.js';
 import Comments from './components/Comments/CommentBox';
+import Nav from './components/Nav/nav';
 
 import React, { useState } from 'react';
 import IdeaCards from "./components/IdeaCards/StyledIdeaCards";
@@ -18,7 +19,12 @@ export default function App() {
   const [selectedCard, setSelectedCard] = useState({});
 
   React.useEffect(() => {
-    axios.get(`${env().STRAPI_URL}/idea-cards/`)
+    //axios.get('http://localhost:1337/idea-cards/')
+    axios.get(`https://api-staging.devlaunchers.org/idea-cards`,
+      {
+        withCredentials: true,
+      }
+    )
       .then(response => {
         const getCards = response.data.map((item) => {
           return item;
@@ -26,19 +32,12 @@ export default function App() {
 
         setCards(getCards);
       });
-
   }, []);
 
   return (
     <div className="App">
-      <BrowserRouter basename="platform__dl-ideas">
-        <nav>
-          <ul>
-            <li><Link to="/">Home</Link></li>
-            <li><Link to="/form">Form</Link></li>
-            <li><Link to="/cards">Cards</Link></li>
-          </ul>
-        </nav>
+      <BrowserRouter>
+        <Nav />
         <Switch>
           <Route exact path="/" exact component={WelcomePage} />
           <Route exact path="/form" exact component={SubmitForm}>

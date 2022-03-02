@@ -5,8 +5,8 @@ import styled from 'styled-components';
 export const Wrapper = styled.div`
   background-color: #30363E;
   border-radius: 40px;
-  max-width: 80%;
-  height: 400px;
+  width: 50%;
+
   margin: 0 auto;
   display: flex;
   justify-content: center;
@@ -16,6 +16,7 @@ export const Wrapper = styled.div`
 export const Headline = styled.h3`
   font-size: 40px;
   color: #D3D4D6;
+  margin-top:40px;
 `;
 
 export const Test = styled.div`
@@ -23,7 +24,8 @@ export const Test = styled.div`
 `;
 
 export const Button = styled.button`
-  width: 200px;
+  width: 550px;
+  height: 90px;
 	background: #C4C4C4;
 	font-weight: bold;
 	color: #000000;
@@ -35,22 +37,54 @@ export const Button = styled.button`
   font-size:20px;
 `;
 
+export const Description = styled.p`
+  color: #F1F4F5;
+`;
+
 export const Question = styled.div`
-  clear: both;
+  margin-left: 10px;
 
   & p {
    display: inline-block;
    color: #ffffff;
-   font-size: 20px;
+   font-size: 15px;
    text-align: left ;
    float: left;
-
+   width: 100%;
+   margin-top: 5px;
+   margin-bottom: 5px;
+   margin-left: 10px;
   }
   & input {
     display: inline-block;
-    float: right;
-    width: 235px;
+    float: left;
+    width: 70%;
     height: 30px;
+    background-color: #c4c4c4;
+    border: none;
+    border-radius: 20px;
+  }
+`;
+
+export const Question2 = styled.div`
+
+
+  & p {
+   display: inline-block;
+   color: #ffffff;
+   font-size: 15px;
+   text-align: left ;
+   float: left;
+   width: 100%;
+   margin-top: 30px;
+   margin-bottom: 5px;
+   margin-left: 20px;
+  }
+  & input {
+    display: inline-block;
+    float: left;
+    width: 100%;
+    height: 100px;
     background-color: #c4c4c4;
     border: none;
     border-radius: 20px;
@@ -88,7 +122,8 @@ export const Submit = styled.button`
 	border-radius: 15px;
 	cursor: pointer;
 	padding: 7px 5px;
-  margin: 10px 5px;
+  margin-top: 80px;
+  margin-bottom: 20px;
   font-size:20px;
   float: right;
 `;

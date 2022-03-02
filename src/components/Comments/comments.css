@@ -94,22 +94,38 @@
   display: flex;
   padding: 15px 0;
   flex-wrap: wrap;
+  justify-content: flex-end;
 }
 
 .form input {
-  margin-top: 10px;
   height: 80px;
   padding-left: 10px;
   border: 1px solid #c1c1c1;
   background-color: #C3C0C0;
   margin-right: 10px;
   border-radius: 25px;
-  width: 100%;
+  width: 85%;
+  float: right;
 }
 
+.user_comment {
+  width: 100%;
+  background-color: #C3C0C0;
+  margin-top: 10px;
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+}
+
+.userImageOne {
+  margin-left: 20px;
+  height: 60px;
+  border-radius: 50%;
+}
 .form input:first-child {
   width: 30%;
   height: 30px;
+  margin-right: 500px;
 }             
 
 .form button {
@@ -120,6 +136,7 @@
   border-radius: 25px;
   border: 1px solid #999;
   background-color: #C3C0C0;
+  float: right;
 }
 
 .form button:hover {
@@ -165,4 +182,3 @@
   border-bottom-left-radius: 30px;
   padding-left: 20px;
 }
-

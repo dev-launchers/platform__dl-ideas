@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import axios from 'axios';
+import './submitIdea.css'
 
 import { env } from '../../utils/EnvironmentVariables';
 
@@ -9,10 +10,12 @@ import {
   Button,
   Test,
   Question,
+  Question2,
   LastQuestion,
   Submit,
   Container,
   SubmitWrapper,
+  Description
 } from './styledSubmitIdea';
 
 
@@ -39,6 +42,11 @@ function SubmitIdea() {
   ]);
   const [author, setAuthor] = useState('1');
   const [difficultyLevel, setDifficultyLevel] = useState('Beginner');
+  const [discord, setDiscord] = useState('');
+  const [email, setEmail] = useState('');
+  const [calendly, setCalendly] = useState('');
+  const [features, setFeatures] = useState('');
+  const [experience, setExperience] = useState('');
   //const [timeStamp, setTimeStamp] = useState(new Date());
 
 
@@ -59,9 +67,16 @@ function SubmitIdea() {
       openPositions: openPositions,
       author: author,
       difficultyLevel: difficultyLevel,
+      discord: discord,
+      email: email,
+      calendly: calendly,
+      features: features,
+      experience: experience,
     }
 
-    axios.post(`${env().STRAPI_URL}/idea-cards/`, state)
+
+    axios.post('http://localhost:1337/idea-cards/', state)
+      //axios.post(`${env().STRAPI_URL}/idea-cards/`, state)
       .then(response => {
         console.log(response);
       });
@@ -72,7 +87,11 @@ function SubmitIdea() {
     setDescription('');
     setTagline('');
     setSelected('submited');
-
+    setDiscord('');
+    setEmail('');
+    setCalendly('');
+    setFeatures('');
+    setExperience('')
   };
 
   console.log(hourCommitmentMax)
@@ -87,11 +106,19 @@ function SubmitIdea() {
     return (
       <Wrapper>
         <Test>
-          <Headline>I have an idea about...</Headline>
+          <Headline>Dev Ideas</Headline>
+          <Description>
+            Have an idea for a development project?<br />
+            Want to help develop an idea?<br />
+            Let’s get started!
+          </Description>
           <Button onClick={() => handleClick(1, 'PSI')}>Solving a Problem</Button>
-          <Button onClick={() => handleClick(2, 'Non-PSI')}>A New Idea</Button>
+          <Button onClick={() => handleClick(2, 'Non-PSI')}>
+            I want to workshop someone else’s idea!
+            <p className="coming_soon">(Coming Soon)</p>
+          </Button>
         </Test>
-      </Wrapper>
+      </Wrapper >
     );
   }
 
@@ -99,24 +126,59 @@ function SubmitIdea() {
     return (
       <Wrapper>
         <Container>
+          <Headline>Dev Ideas</Headline>
+          <Description>
+            Have an idea for a development project?<br />
+            Share your idea with us!<br />
+          </Description>
           <form onSubmit={submitHandler}>
-            <Headline>I have an idea about solving a problem</Headline>
+            <div className="test">
+              <div className="progress_bar">
+                <div className="circule"><div className="completed"></div><p>Idea Form</p></div>
+                <div className="circule"><div className=""></div><p>Review</p></div>
+                <div className="circule"><div className=""></div><p>Workshopping</p></div>
+                <div className="circule"><div className=""></div><p>Recruitment</p></div>
+                <div className="circule"><div className=""></div><p>Project</p></div>
+              </div>
+            </div>
             <Question>
-              <p>The problem I want to solve is</p>
+              <p>Idea Name</p>
               <input required type="text" name="ideaName" value={ideaName} onChange={(e) => setIdeaName(e.target.value)} />
             </Question>
             <Question>
-              <p>I plan on solving this problem by</p>
-              <input type='text' name='description' value={description} onChange={(e) => setDescription(e.target.value)} />
+              <p>Your Discord Name</p>
+              <input required type="text" name="discord" value={discord} onChange={(e) => setDiscord(e.target.value)} />
             </Question>
             <Question>
-              <p>This solution would help</p>
-              <input type='text' name='targetAudience' value={targetAudience} onChange={(e) => setTargetAudience(e.target.value)} />
+              <p>Your Email</p>
+              <input required type="text" name="email" value={email} onChange={(e) => setEmail(e.target.value)} />
             </Question>
-            <LastQuestion>
+            <Question>
+              <p>Do you have a Calendly? If so add a link here, if not it’s okay!</p>
+              <input required type="text" name="calendly" value={calendly} onChange={(e) => setCalendly(e.target.value)} />
+            </Question>
+            <Question2>
+              <p>What is your experience with development?</p>
+              <input type='text' name='experience' value={experience} onChange={(e) => setExperience(e.target.value)} />
+            </Question2>
+            <Question2>
+              <p>What is your idea?</p>
+              <input type='text' name='description' value={description} onChange={(e) => setDescription(e.target.value)} />
+            </Question2>
+            <Question2>
+              <p>Why do you think your idea is helpful or would be fun?</p>
+              <input type='text' name='targetAudience' value={targetAudience} onChange={(e) => setTargetAudience(e.target.value)} />
+            </Question2>
+            <Question2>
+              <p>What features would your idea have?</p>
+              <input type='text' name='features' value={features} onChange={(e) => setFeatures(e.target.value)} />
+            </Question2>
+            <Question2>
+              <p>Anything else you want to share with us?</p>
               <input type='text' name='tagline' value={tagline} onChange={(e) => setTagline(e.target.value)} />
-              <p>Is something I need help with</p>
-            </LastQuestion>
+            </Question2>
+            <p className="text">After submitting your idea will be reviewed and enter the
+workshopping stage !</p>
             <Submit type="submit">Submit</Submit>
           </form>
         </Container>
