@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 import './submitIdea.css'
-import { Link } from 'react-router-dom'
 
 import { env } from '../../utils/EnvironmentVariables';
 
@@ -20,9 +19,9 @@ import {
 } from './styledSubmitIdea';
 
 
-function SubmitIdea() {
+function SubmitIdeaForm() {
 
-  const [selected, setSelected] = useState('');
+  const [selected, setSelected] = useState('form');
 
   const [ideaName, setIdeaName] = useState('');
   const [tagline, setTagline] = useState('');
@@ -76,8 +75,8 @@ function SubmitIdea() {
     }
 
 
-    axios.post('http://localhost:1337/idea-cards/', state)
-      //axios.post(`${env().STRAPI_URL}/idea-cards/`, state)
+    //axios.post('http://localhost:1337/idea-cards/', state)
+    axios.post(`${env().STRAPI_URL}/idea-cards/`, state)
       .then(response => {
         console.log(response);
       });
@@ -95,7 +94,7 @@ function SubmitIdea() {
     setExperience('')
   };
 
-  console.log(hourCommitmentMax)
+  console.log(selected)
 
   const handleClick = (e, n) => {
     setHourCommitmentMax(e);
@@ -115,17 +114,15 @@ function SubmitIdea() {
           </Description>
           <Button onClick={() => handleClick(1, 'PSI')}>Solving a Problem</Button>
           <Button onClick={() => handleClick(2, 'Non-PSI')}>
-            <Link to="/cards">
-              I want to workshop someone else’s idea!
+            I want to workshop someone else’s idea!
             <p className="coming_soon">(Coming Soon)</p>
-            </Link>
           </Button>
         </Test>
       </Wrapper >
     );
   }
 
-  if (selected === 'PSI') {
+  if (selected === 'form') {
     return (
       <Wrapper>
         <Container>
@@ -189,35 +186,6 @@ workshopping stage !</p>
     )
   }
 
-  if (selected === 'Non-PSI') {
-    return (
-      <Wrapper>
-        <Container>
-          <form onSubmit={submitHandler}>
-            <Headline>I have an idea about</Headline>
-            <Question>
-              <p>My idea is</p>
-              <input required type="text" name="ideaName" value={ideaName} onChange={(e) => setIdeaName(e.target.value)} />
-            </Question>
-            <Question>
-              <p>I will achive this by</p>
-              <input type='text' name='description' value={description} onChange={(e) => setDescription(e.target.value)} />
-            </Question>
-            <Question>
-              <p>People would use this because</p>
-              <input type='text' name='targetAudience' value={targetAudience} onChange={(e) => setTargetAudience(e.target.value)} />
-            </Question>
-            <LastQuestion>
-              <input type='text' name='tagline' value={tagline} onChange={(e) => setTagline(e.target.value)} />
-              <p>Is something I need help with</p>
-            </LastQuestion>
-            <Submit type="submit">Submit</Submit>
-          </form>
-        </Container>
-      </Wrapper>
-    )
-  }
-
   if (selected === 'submited') {
     return (
       <Wrapper>
@@ -232,4 +200,4 @@ Next your idea will move on to the workshopping phase. </p>
 
 }
 
-export default SubmitIdea;
+export default SubmitIdeaForm;

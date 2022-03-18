@@ -1,10 +1,11 @@
 import "./styles.css";
-import { BrowserRouter, Link, Route, Switch } from 'react-router-dom';
+import { BrowserRouter, Link, Route, Switch, HashRouter } from 'react-router-dom';
 
-import SubmitForm from './components/submitform.js';
+import SubmitIdeaForm from './components/SubmitIdea/SubmitIdeaForm';
 import WelcomePage from './components/welcomepage.js';
 import Comments from './components/Comments/CommentBox';
 import Nav from './components/Nav/nav';
+import SubmitForm from './components/submitform';
 
 import React, { useState } from 'react';
 import IdeaCards from "./components/IdeaCards/StyledIdeaCards";
@@ -20,7 +21,7 @@ export default function App() {
 
   React.useEffect(() => {
     //axios.get('http://localhost:1337/idea-cards/')
-    axios.get(`https://api-staging.devlaunchers.org/idea-cards`,
+    axios.get(`https://api.devlaunchers.org/idea-cards`,
       {
         withCredentials: true,
       }
@@ -36,11 +37,14 @@ export default function App() {
 
   return (
     <div className="App">
-      <BrowserRouter>
+      <HashRouter>
         <Nav />
         <Switch>
           <Route exact path="/" exact component={WelcomePage} />
-          <Route exact path="/form" exact component={SubmitForm}>
+          <Route exact path="/form" exact component={SubmitIdeaForm}>
+            <SubmitIdeaForm />
+          </Route>
+          <Route exact path="/test" component={SubmitForm}>
             <SubmitForm />
           </Route>
           <Route exact path="/cards">
@@ -56,7 +60,7 @@ export default function App() {
             <Comments ideaName={selectedCard.ideaName} selectedCard={selectedCard} />
           </Route>
         </Switch>
-      </BrowserRouter>
+      </HashRouter>
     </div >
   );
 }

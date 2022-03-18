@@ -59,3 +59,7 @@ form {
   font-size: 14px;
   padding-top: 10px;
 }
+
+a:visited {
+  color: black;
+}

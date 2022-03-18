@@ -12,10 +12,10 @@ const Nav = function (props) {
         <h3>Home</h3>
       </Link>
       <Link to="/form">
-        <h3>Form</h3>
+        <h3>Submit an Idea</h3>
       </Link>
       <Link to="/cards">
-        <h3>Cards</h3>
+        <h3>Potential Projects</h3>
       </Link>
     </div>
   )
