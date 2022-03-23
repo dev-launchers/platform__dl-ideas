@@ -1,26 +1,26 @@
 {
   "files": {
-    "main.css": "/static/css/main.28d89e2f.chunk.css",
-    "main.js": "/static/js/main.6754f8d3.chunk.js",
-    "main.js.map": "/static/js/main.6754f8d3.chunk.js.map",
-    "runtime-main.js": "/static/js/runtime-main.b1bed3dc.js",
-    "runtime-main.js.map": "/static/js/runtime-main.b1bed3dc.js.map",
-    "static/css/2.c1acc711.chunk.css": "/static/css/2.c1acc711.chunk.css",
-    "static/js/2.a0ac848a.chunk.js": "/static/js/2.a0ac848a.chunk.js",
-    "static/js/2.a0ac848a.chunk.js.map": "/static/js/2.a0ac848a.chunk.js.map",
-    "index.html": "/index.html",
-    "static/css/2.c1acc711.chunk.css.map": "/static/css/2.c1acc711.chunk.css.map",
-    "static/css/main.28d89e2f.chunk.css.map": "/static/css/main.28d89e2f.chunk.css.map",
-    "static/js/2.a0ac848a.chunk.js.LICENSE.txt": "/static/js/2.a0ac848a.chunk.js.LICENSE.txt",
-    "static/media/AddIconLight.74265fb4.svg": "/static/media/AddIconLight.74265fb4.svg",
-    "static/media/semantic.min.css": "/static/media/outline-icons.ddae9b1b.woff",
-    "static/media/star.af1a0016.svg": "/static/media/star.af1a0016.svg"
+    "main.css": "/ideas/static/css/main.28d89e2f.chunk.css",
+    "main.js": "/ideas/static/js/main.ac31889f.chunk.js",
+    "main.js.map": "/ideas/static/js/main.ac31889f.chunk.js.map",
+    "runtime-main.js": "/ideas/static/js/runtime-main.2cb683de.js",
+    "runtime-main.js.map": "/ideas/static/js/runtime-main.2cb683de.js.map",
+    "static/css/2.3594e583.chunk.css": "/ideas/static/css/2.3594e583.chunk.css",
+    "static/js/2.38a3dde9.chunk.js": "/ideas/static/js/2.38a3dde9.chunk.js",
+    "static/js/2.38a3dde9.chunk.js.map": "/ideas/static/js/2.38a3dde9.chunk.js.map",
+    "index.html": "/ideas/index.html",
+    "static/css/2.3594e583.chunk.css.map": "/ideas/static/css/2.3594e583.chunk.css.map",
+    "static/css/main.28d89e2f.chunk.css.map": "/ideas/static/css/main.28d89e2f.chunk.css.map",
+    "static/js/2.38a3dde9.chunk.js.LICENSE.txt": "/ideas/static/js/2.38a3dde9.chunk.js.LICENSE.txt",
+    "static/media/AddIconLight.74265fb4.svg": "/ideas/static/media/AddIconLight.74265fb4.svg",
+    "static/media/semantic.min.css": "/ideas/static/media/outline-icons.ddae9b1b.woff",
+    "static/media/star.af1a0016.svg": "/ideas/static/media/star.af1a0016.svg"
   },
   "entrypoints": [
-    "static/js/runtime-main.b1bed3dc.js",
-    "static/css/2.c1acc711.chunk.css",
-    "static/js/2.a0ac848a.chunk.js",
+    "static/js/runtime-main.2cb683de.js",
+    "static/css/2.3594e583.chunk.css",
+    "static/js/2.38a3dde9.chunk.js",
     "static/css/main.28d89e2f.chunk.css",
-    "static/js/main.6754f8d3.chunk.js"
+    "static/js/main.ac31889f.chunk.js"
   ]
 }
