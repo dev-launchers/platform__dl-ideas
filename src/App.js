@@ -37,7 +37,7 @@ export default function App() {
 
   return (
     <div className="App">
-      <HashRouter>
+      <HashRouter basename="/ideas">
         <Nav />
         <Switch>
           <Route exact path="/" exact component={WelcomePage} />
