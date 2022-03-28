@@ -68,7 +68,7 @@ function Card({ cards, setSelectedCard }) {
         </MainList>
       </MainCard>
       <FooterCard>
-        <FooterLink><Link onClick={() => { setSelectedCard(cards) }} to={`/comments/${cards.id}`} >See More &#62;</Link></FooterLink>
+        <FooterLink><Link onClick={() => { setSelectedCard(cards) }} to={`/workshopping/${cards.id}`} >See More &#62;</Link></FooterLink>
       </FooterCard>
     </CardWrapper>
   )

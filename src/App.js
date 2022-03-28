@@ -37,7 +37,7 @@ export default function App() {
 
   return (
     <div className="App">
-      <HashRouter basename="/ideas">
+      <HashRouter>
         <Nav />
         <Switch>
           <Route exact path="/" exact component={WelcomePage} />
@@ -56,7 +56,7 @@ export default function App() {
               </CardsWrapper>
             </IdeaCards>
           </Route>
-          <Route exact path="/comments/:id">
+          <Route exact path="/workshopping/:id">
             <Comments ideaName={selectedCard.ideaName} selectedCard={selectedCard} />
           </Route>
         </Switch>

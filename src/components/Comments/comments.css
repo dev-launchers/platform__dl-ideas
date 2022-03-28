@@ -182,3 +182,53 @@
   border-bottom-left-radius: 30px;
   padding-left: 20px;
 }
+
+.test {
+  position: relative;
+  margin-left: 80px;
+  bottom: 60px;
+}
+
+.progress_bar {
+  background-color: white;
+  height: 7.35px;
+  width: 350px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 70px;
+}
+
+.circule {
+  height: 20px ;
+  width: 20px;
+  background-color: white;
+  border-radius: 50%;
+}
+
+.circule p {
+  color: white;
+  font-size: 9px;
+}
+
+.completed {
+  background-color: #322E2E;
+  height: 16px;
+  width: 16px;
+  border-radius: 50px;
+  position: relative;
+  left: 2px;
+  top: 2px;
+  margin-bottom: -40px;
+}
+
+.incomplete {
+  background-color: white;
+  height: 16px;
+  width: 16px;
+  border-radius: 50px;
+  position: relative;
+  left: 2px;
+  top: 2px;
+  margin-bottom: -40px;
+}
