@@ -114,12 +114,12 @@ function SubmitIdea() {
             Let’s get started!
           </Description>
           <Button onClick={() => handleClick(1, 'PSI')}>Solving a Problem</Button>
-          <Button onClick={() => handleClick(2, 'Non-PSI')}>
-            <Link to="/cards">
+          <Link to="/cards">
+            <Button onClick={() => handleClick(2, 'Non-PSI')}>
               I want to workshop someone else’s idea!
             <p className="coming_soon">(Coming Soon)</p>
-            </Link>
-          </Button>
+            </Button>
+          </Link>
         </Test>
       </Wrapper >
     );
