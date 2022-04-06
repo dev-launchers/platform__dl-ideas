@@ -21,7 +21,7 @@ export default function App() {
 
   React.useEffect(() => {
     //axios.get('http://localhost:1337/idea-cards/')
-    axios.get(`https://api-staging.devlaunchers.org/idea-cards`,
+    axios.get(`https://api.devlaunchers.org/idea-cards`,
       {
         withCredentials: true,
       }
