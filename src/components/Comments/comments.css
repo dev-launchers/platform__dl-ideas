@@ -88,6 +88,7 @@
   max-width: 700px;
   min-width: 300px;
   border-radius: 30px;
+  margin: 0 300px 0 300px;
 }
 
 .form form {
@@ -183,13 +184,13 @@
   padding-left: 20px;
 }
 
-.test {
+.workshop_test {
   position: relative;
   margin-left: 80px;
   bottom: 60px;
 }
 
-.progress_bar {
+.workshop_progress_bar {
   background-color: white;
   height: 7.35px;
   width: 350px;
@@ -199,19 +200,19 @@
   margin-bottom: 70px;
 }
 
-.circule {
+.workshop_circule {
   height: 20px ;
   width: 20px;
   background-color: white;
   border-radius: 50%;
 }
 
-.circule p {
+.workshop_circule p {
   color: white;
   font-size: 9px;
 }
 
-.completed {
+.workshop_completed {
   background-color: #322E2E;
   height: 16px;
   width: 16px;
@@ -222,7 +223,7 @@
   margin-bottom: -40px;
 }
 
-.incomplete {
+.workshop_incomplete {
   background-color: white;
   height: 16px;
   width: 16px;

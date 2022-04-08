@@ -9,12 +9,12 @@ function Idea(props) {
         <h2>{props.selectedCard.ideaName}</h2>
         <p>{props.selectedCard.tagline}</p>
         <div className="test">
-          <div className="progress_bar">
-            <div className="circule"><div className="completed"></div><p>Idea Form</p></div>
-            <div className="circule"><div className="completed"></div><p>Review</p></div>
-            <div className="circule"><div className="completed"></div><p>Workshopping</p></div>
-            <div className="circule"><div className="incomplete"></div><p>Recruitment</p></div>
-            <div className="circule"><div className="incomplete"></div><p>Project</p></div>
+          <div className="workshop_progress_bar">
+            <div className="workshop_circule"><div className="workshop_completed"></div><p>Idea Form</p></div>
+            <div className="workshop_circule"><div className="workshop_completed"></div><p>Review</p></div>
+            <div className="workshop_circule"><div className="workshop_completed"></div><p>Workshopping</p></div>
+            <div className="workshop_circule"><div className="workshop_incomplete"></div><p>Recruitment</p></div>
+            <div className="workshop_circule"><div className="workshop_incomplete"></div><p>Project</p></div>
           </div>
         </div>
       </div>
