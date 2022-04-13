@@ -14,7 +14,7 @@ function CommentForm(props) {
     e.preventDefault();
     var data = { author: props.handleChange, text: props.handleTextChange }
 
-    axios.post(`http://localhost:1337/idea-cards/${props.selectedCard.id}/comment`, data)
+    axios.post(`https://api-staging.devlaunchers.org/idea-cards/${props.selectedCard.id}/comment`, data)
       .then(response => {
         console.log(response)
       })

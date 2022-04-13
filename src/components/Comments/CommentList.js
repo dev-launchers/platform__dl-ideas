@@ -7,7 +7,7 @@ function CommentList(props) {
   const [data, setData] = useState([])
 
   useEffect(() => {
-    axios.get(`http://localhost:1337/idea-cards/${props.selectedCard.id}/`)
+    axios.get(`https://api-staging.devlaunchers.org/idea-cards/${props.selectedCard.id}/`)
       .then(response => {
         setData(response.data.comments)
       })
