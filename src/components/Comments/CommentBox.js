@@ -15,7 +15,7 @@ function Comments(props) {
   const [handleTextChange, setHandleTextChange] = useState('');
 
   useEffect(() => {
-    axios.get("http://localhost:1337/idea-cards/3/")
+    axios.get("https://api-staging.devlaunchers.org/3/")
       .then(response => {
         setData(response.data.comments)
       })
