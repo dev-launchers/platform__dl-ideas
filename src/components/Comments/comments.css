@@ -150,7 +150,7 @@
   width: 75%;
   max-width: 700px;
   min-width: 300px;
-  height: 200px;
+  height: 280px;
   border-radius: 30px;
   text-align: left;
 }
@@ -175,6 +175,14 @@
   color: white;
 }
 
+.idea_progress {
+  background-color: #30363E;
+  width: 100%;
+  height: 50%;
+  padding-top: 30px;
+  color: white;
+}
+
 .description {
   background-color: #89969F;
   width: 100%;
@@ -183,6 +191,39 @@
   border-bottom-left-radius: 30px;
   padding-left: 20px;
 }
+
+.lader {
+  padding-top: 10px;
+  margin-bottom: 5px;
+}
+.leader_name {
+  display: flex;
+  align-items: center;
+  justify-content: right;
+}
+
+
+.leader_image {
+  height: 30px;
+  margin-right: 10px;
+  border-radius: 50%;
+}
+.leader_info {
+  margin-left: 30px;
+  background-color: #30363E;
+  width: 100%;
+  height: 50%;
+  border-top-right-radius: 30px;
+  border-top-left-radius: 30px;
+  border-bottom-right-radius: 30px;
+  border-bottom-left-radius: 30px;
+  padding-top: 20px;
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-bottom: 20px;
+  color: white;
+}
+
 
 .workshop_test {
   position: relative;
