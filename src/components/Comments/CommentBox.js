@@ -2,6 +2,10 @@ import React, { useState, useEffect } from 'react';
 import CommentList from './CommentList';
 import CommentForm from './CommentForm';
 import Idea from './Idea';
+
+import LeaderInfo from './LeaderInfo';
+
+
 import './comments.css';
 import axios from 'axios';
 
@@ -22,17 +26,27 @@ function Comments(props) {
 
   }, [])
 
+  console.log(props)
+
 
   return (
     <div className="container">
-      <Idea selectedCard={props.selectedCard} />
+        <Idea selectedCard={props.selectedCard} />
+      
+      <div>
+        <LeaderInfo selectedCard={props.selectedCard} />
+      </div>
+
       <div className="form">
         <CommentForm setHandleChange={setHandleChange} data={data} setData={setData} handleChange={handleChange} setHandleTextChange={setHandleTextChange} handleTextChange={handleTextChange} selectedCard={props.selectedCard} />
       </div>
+
       <div className="comments">
         <CommentList data={data} selectedCard={props.selectedCard} />
       </div>
+
     </div>
+
   );
 }
 

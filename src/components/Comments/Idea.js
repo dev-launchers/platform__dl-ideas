@@ -8,7 +8,7 @@ function Idea(props) {
       <div className="idea_name">
         <h2>{props.selectedCard.ideaName}</h2>
         <p>{props.selectedCard.tagline}</p>
-        <div className="test">
+        <div className="idea_progress">
           <div className="workshop_progress_bar">
             <div className="workshop_circule"><div className="workshop_completed"></div><p>Idea Form</p></div>
             <div className="workshop_circule"><div className="workshop_completed"></div><p>Review</p></div>
