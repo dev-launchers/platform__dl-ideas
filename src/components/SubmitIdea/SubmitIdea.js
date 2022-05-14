@@ -24,6 +24,7 @@ function SubmitIdea() {
 
   const [selected, setSelected] = useState('');
 
+  const [ideaId, setIdeaId] = useState('');
   const [ideaName, setIdeaName] = useState('');
   const [tagline, setTagline] = useState('');
   const [description, setDescription] = useState('');
@@ -51,7 +52,7 @@ function SubmitIdea() {
   //const [timeStamp, setTimeStamp] = useState(new Date());
 
 
-  const submitHandler = e => {
+  const submitHandler = e =>  {
     e.preventDefault();
     // i don't think we need the date stuff?
     // get request of test posts still have a date
@@ -113,7 +114,9 @@ function SubmitIdea() {
             Want to help develop an idea?<br />
             Let’s get started!
           </Description>
-          <Button onClick={() => handleClick(1, 'PSI')}>Solving a Problem</Button>
+          <Link to="/form">
+            <Button onClick={() => handleClick(1, 'PSI')}>Solving a Problem</Button>
+          </Link>
           <Link to="/cards">
             <Button onClick={() => handleClick(2, 'Non-PSI')}>
               I want to workshop someone else’s idea!
@@ -223,8 +226,8 @@ workshopping stage !</p>
       <Wrapper>
         <SubmitWrapper>
           <p>Thank you for submitting your idea!
-Next your idea will move on to the workshopping phase. </p>
-          <button>Next</button>
+          Next your idea will move on to the workshopping phase. </p>
+            <button>Next</button>
         </SubmitWrapper>
       </Wrapper>
     )

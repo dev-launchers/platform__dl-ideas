@@ -10,6 +10,8 @@ function formatDate(string){
 
 function LeaderInfo(props) {
 
+  const {selectedCard, ...other} = props;
+
   return (
     <div className="leader">
 
