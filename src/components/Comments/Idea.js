@@ -3,6 +3,9 @@ import './comments.css';
 
 function Idea(props) {
 
+  const {selectedCard, ...other} = props;
+
+
   return (
     <div className="idea">
       <div className="idea_name">

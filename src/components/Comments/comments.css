@@ -5,7 +5,7 @@
   min-height: 100vh;
   width: 100vw;
   display: flex;
-  align-items: center;
+  align-items: top;
   justify-content: center;
   flex-wrap: wrap;
 
@@ -13,13 +13,14 @@
 
 .comments {
   overflow: auto;
-  width: 75%;
+  width: 100%;
   max-width: 700px;
   min-width: 300px;
   height: 300px;
   background-color: #C3C0C0;
   border-radius: 30px;
 }
+
 
 .comments h2 {
   font-weight: 300;
@@ -32,13 +33,27 @@
 }
 
 .singleCommentContent {
-  width: 75%;
-  min-width: 590px;
+  width: 100%;
+  min-width: 430px;
   background-color: #444D58;
   color: #C4C4C4;
   border-radius: 25px;
   padding: 20px;
   display: inline-flex;
+}
+
+.user_name_comment_box {
+  margin-right: 62%;
+}
+
+.user_name_comment {
+  width: 100%;
+  min-width: 200px;
+  background-color: #444D58;
+  border-radius: 25px;
+  padding: 20px;
+
+  float:left;
 }
 
 .userImage {
@@ -84,11 +99,11 @@
 
 .form {
   overflow: auto;
-  width: 75%;
+  width: 100%;
   max-width: 700px;
   min-width: 300px;
   border-radius: 30px;
-  margin: 0 300px 0 300px;
+  margin: 0 300 px 0 300px;
 }
 
 .form form {
@@ -109,6 +124,8 @@
   float: right;
 }
 
+
+
 .user_comment {
   width: 100%;
   background-color: #C3C0C0;
@@ -124,9 +141,8 @@
   border-radius: 50%;
 }
 .form input:first-child {
-  width: 30%;
+  width: 100%;
   height: 30px;
-  margin-right: 500px;
 }             
 
 .form button {
@@ -147,7 +163,7 @@
 }
 
 .idea {
-  width: 75%;
+  width: 100%;
   max-width: 700px;
   min-width: 300px;
   height: 280px;

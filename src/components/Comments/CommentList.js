@@ -19,7 +19,7 @@ function CommentList(props) {
     </Comment>
   ));
   return (
-    <div>
+    <div >
       {commentNodes}
     </div>
   );

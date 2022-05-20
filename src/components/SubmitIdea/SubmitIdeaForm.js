@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 import './submitIdea.css'
+import { Link } from 'react-router-dom';
 
 import { env } from '../../utils/EnvironmentVariables';
 
@@ -23,6 +24,7 @@ function SubmitIdeaForm() {
 
   const [selected, setSelected] = useState('form');
 
+  const [ideaId, setIdeaId] = useState('');
   const [ideaName, setIdeaName] = useState('');
   const [tagline, setTagline] = useState('');
   const [description, setDescription] = useState('');
@@ -50,7 +52,8 @@ function SubmitIdeaForm() {
   //const [timeStamp, setTimeStamp] = useState(new Date());
 
 
-  const submitHandler = e => {
+  const submitHandler = async e => {
+
     e.preventDefault();
     // i don't think we need the date stuff?
     // get request of test posts still have a date
@@ -76,22 +79,23 @@ function SubmitIdeaForm() {
 
 
     //axios.post('http://localhost:1337/idea-cards/', state)
-    axios.post(`${env().STRAPI_URL}/idea-cards/`, state)
-      .then(response => {
-        console.log(response);
-      });
+    const res = await axios.post(`${env().STRAPI_URL}/idea-cards/`, state)
 
+    if (res.status === 200 ) {
 
-    setIdeaName('');
-    setTargetAudience('');
-    setDescription('');
-    setTagline('');
-    setSelected('submited');
-    setDiscord('');
-    setEmail('');
-    setCalendly('');
-    setFeatures('');
-    setExperience('')
+      setIdeaId(res.data.id);
+      setIdeaName('');
+      setTargetAudience('');
+      setDescription('');
+      setTagline('');
+      setSelected('submited');
+      setDiscord('');
+      setEmail('');
+      setCalendly('');
+      setFeatures('');
+      setExperience('')
+    }
+
   };
 
   console.log(selected)
@@ -192,7 +196,9 @@ workshopping stage !</p>
         <SubmitWrapper>
           <p>Thank you for submitting your idea!
 Next your idea will move on to the workshopping phase. </p>
-          <button>Next</button>
+          <Link to={`/workshopping/${ideaId}`} >
+            <button>Next</button>
+          </Link>
         </SubmitWrapper>
       </Wrapper>
     )
