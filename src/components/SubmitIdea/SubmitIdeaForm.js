@@ -78,8 +78,11 @@ function SubmitIdeaForm() {
     }
 
 
-    //axios.post('http://localhost:1337/idea-cards/', state)
+
     const res = await axios.post(`${env().STRAPI_URL}/idea-cards/`, state)
+
+
+    
 
     if (res.status === 200 ) {
 
@@ -98,7 +101,6 @@ function SubmitIdeaForm() {
 
   };
 
-  console.log(selected)
 
   const handleClick = (e, n) => {
     setHourCommitmentMax(e);

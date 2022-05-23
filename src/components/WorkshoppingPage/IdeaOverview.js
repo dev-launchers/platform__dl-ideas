@@ -1,7 +1,7 @@
 
 import './comments.css';
 
-function Idea(props) {
+function IdeaOverview(props) {
 
   const {selectedCard, ...other} = props;
 
@@ -29,4 +29,4 @@ function Idea(props) {
   )
 }
 
-export default Idea;
+export default IdeaOverview;

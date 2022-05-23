@@ -77,8 +77,8 @@ function SubmitIdea() {
     }
 
 
-    axios.post('https://api-staging.devlaunchers.org/idea-cards/', state)
-      //axios.post(`${env().STRAPI_URL}/idea-cards/`, state)
+    // axios.post('https://api-staging.devlaunchers.org/idea-cards/', state)
+    axios.post(`${env().STRAPI_URL}/idea-cards/`, state)
       .then(response => {
         console.log(response);
       });

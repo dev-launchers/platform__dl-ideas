@@ -25,7 +25,7 @@ function CommentForm(props) {
         }
       })
   }
-
+// move to WorkshoppingPage
   return (
     <div >
       <form onSubmit={handleSubmit} >

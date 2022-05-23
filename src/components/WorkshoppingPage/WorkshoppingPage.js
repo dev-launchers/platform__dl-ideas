@@ -1,16 +1,15 @@
 import React, { useState, useEffect } from 'react';
 import { useLocation } from 'react-router-dom'
-import CommentList from './CommentList';
+import CommentList from './DisplayComments';
 import CommentForm from './CommentForm';
-import Idea from './Idea';
-
+import IdeaOverview from './IdeaOverview';
 import LeaderInfo from './LeaderInfo';
-
+import { env } from '../../utils/EnvironmentVariables';
 
 import './comments.css';
 import axios from 'axios';
 
-function Comments(props) {
+function WorkshoppingPage(props) {
   const [data, setData] = useState(
     {
       ideaName:'',
@@ -30,7 +29,9 @@ function Comments(props) {
 
 
   useEffect(() => {
-    axios.get(`https://api-staging.devlaunchers.org/idea-cards/${ideaId}`)
+
+    axios.get(`${env().STRAPI_URL}/idea-cards/${ideaId}`)
+
       .then(response => {
 
         if (response.status === 200 ) {
@@ -38,6 +39,7 @@ function Comments(props) {
         }
       })
   }, [])
+
 
 
   return (
@@ -48,7 +50,7 @@ function Comments(props) {
     <div className="container">
         <div >
           <div>
-            <Idea selectedCard={data} />
+            <IdeaOverview selectedCard={data} />
           </div>
 
           <div className="form">
@@ -71,4 +73,4 @@ function Comments(props) {
   );
 }
 
-export default Comments;
+export default WorkshoppingPage;

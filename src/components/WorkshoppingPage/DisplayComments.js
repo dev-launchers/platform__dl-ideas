@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from 'react';
-import Comment from './Comment';
+import Comment from './SingleComment';
 import axios from 'axios';
 
-function CommentList(props) {
+function DisplayComments(props) {
 
   const [data, setData] = useState([])
 
@@ -25,4 +25,4 @@ function CommentList(props) {
   );
 };
 
-export default CommentList;
+export default DisplayComments;
