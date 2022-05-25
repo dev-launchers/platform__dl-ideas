@@ -21,7 +21,7 @@ import { Link } from 'react-router-dom';
 
 function Card({ cards, setSelectedCard }) {
 
-  console.log(cards.id)
+
 
   return (
     <CardWrapper>

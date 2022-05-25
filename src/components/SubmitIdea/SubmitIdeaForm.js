@@ -23,6 +23,7 @@ import {
 function SubmitIdeaForm() {
 
   const [selected, setSelected] = useState('form');
+  const [sending, setSending] = useState(false);
 
   const [ideaId, setIdeaId] = useState('');
   const [ideaName, setIdeaName] = useState('');
@@ -51,14 +52,18 @@ function SubmitIdeaForm() {
   const [experience, setExperience] = useState('');
   //const [timeStamp, setTimeStamp] = useState(new Date());
 
+  console.log("SUBMIT IDEA FORM")
+
 
   const submitHandler = async e => {
 
     e.preventDefault();
+    setSending(true)
     // i don't think we need the date stuff?
     // get request of test posts still have a date
     // let currentTime =  new Date().toLocaleDateString('en-US');
     // this.setState({timeStamp: currentTime});
+
     var state = {
       ideaName: ideaName,
       tagline: tagline,
@@ -77,12 +82,7 @@ function SubmitIdeaForm() {
       experience: experience,
     }
 
-
-
     const res = await axios.post(`${env().STRAPI_URL}/idea-cards/`, state)
-
-
-    
 
     if (res.status === 200 ) {
 
@@ -97,6 +97,12 @@ function SubmitIdeaForm() {
       setCalendly('');
       setFeatures('');
       setExperience('')
+      setSending(false)
+    }
+
+    else {
+      alert("Unable to register your idea.")
+      setSending(false)
     }
 
   };
@@ -185,7 +191,7 @@ function SubmitIdeaForm() {
             </Question2>
             <p className="text">After submitting your idea will be reviewed and enter the
 workshopping stage !</p>
-            <Submit type="submit">Submit</Submit>
+            <Submit type="submit"> {sending === true ? "Wait" : "Submit"} </Submit>
           </form>
         </Container>
       </Wrapper>
