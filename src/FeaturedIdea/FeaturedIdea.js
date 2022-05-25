@@ -1,10 +1,10 @@
-import { data } from "../GetSheetsData/GetSheetsData";
-import React from "react";
+// import { data } from "../GetSheetsData/GetSheetsData";
+// import React from "react";
 
-const FeaturedIdeas = ({ data }) => {
-  let timestamps = [];
-  let popularities = [];
-  let remainingNeededPositions = [];
-};
+// const FeaturedIdeas = ({ data }) => {
+//   let timestamps = [];
+//   let popularities = [];
+//   let remainingNeededPositions = [];
+// };
 
-export default FeaturedIdeas;
+// export default FeaturedIdeas;

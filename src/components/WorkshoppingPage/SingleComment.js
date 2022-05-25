@@ -1,4 +1,4 @@
-const Comment = props => (
+const SingleComment = props => (
   <div className="singleComment">
     <img alt="user_image" className="userImage" src={`https://picsum.photos/70?random=${props.id}`} />
     <div className="textContent">
@@ -12,4 +12,4 @@ const Comment = props => (
   </div>
 );
 
-export default Comment;
+export default SingleComment;
