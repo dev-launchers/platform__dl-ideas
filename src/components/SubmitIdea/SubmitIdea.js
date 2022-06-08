@@ -23,6 +23,7 @@ import {
 function SubmitIdea() {
 
   const [selected, setSelected] = useState('');
+  const [sending, setSending] = useState(false);
 
   const [ideaId, setIdeaId] = useState('');
   const [ideaName, setIdeaName] = useState('');
@@ -52,8 +53,9 @@ function SubmitIdea() {
   //const [timeStamp, setTimeStamp] = useState(new Date());
 
 
-  const submitHandler = e =>  {
+  const submitHandler = async e => {
     e.preventDefault();
+    setSending(true)
     // i don't think we need the date stuff?
     // get request of test posts still have a date
     // let currentTime =  new Date().toLocaleDateString('en-US');
@@ -78,25 +80,31 @@ function SubmitIdea() {
 
 
     // axios.post('https://api-staging.devlaunchers.org/idea-cards/', state)
-    axios.post(`${env().STRAPI_URL}/idea-cards/`, state)
-      .then(response => {
-        console.log(response);
-      });
+    const res = await axios.post(`${env().STRAPI_URL}/idea-cards/`, state)
 
 
-    setIdeaName('');
-    setTargetAudience('');
-    setDescription('');
-    setTagline('');
-    setSelected('submited');
-    setDiscord('');
-    setEmail('');
-    setCalendly('');
-    setFeatures('');
-    setExperience('')
-  };
+        if (res.status === 200 ) {
 
-  console.log(hourCommitmentMax)
+          setIdeaId(res.data.id);
+          setIdeaName('');
+          setTargetAudience('');
+          setDescription('');
+          setTagline('');
+          setSelected('submited');
+          setDiscord('');
+          setEmail('');
+          setCalendly('');
+          setFeatures('');
+          setExperience('')
+          setSending(false)
+        }
+        else {
+          alert("Unable to register your idea.")
+          setSending(false)
+        }
+    
+      }
+
 
   const handleClick = (e, n) => {
     setHourCommitmentMax(e);
@@ -185,7 +193,7 @@ function SubmitIdea() {
             </Question2>
             <p className="text">After submitting your idea will be reviewed and enter the
 workshopping stage !</p>
-            <Submit type="submit">Submit</Submit>
+            <Submit type="submit"> {sending === true ? "Wait" : "Submit"} </Submit>
           </form>
         </Container>
       </Wrapper>

@@ -36,7 +36,7 @@ export default function App() {
   }, []);
 
 
-    console.log(selectedCard)
+
 
 
   return (
