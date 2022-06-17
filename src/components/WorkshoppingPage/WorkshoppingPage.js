@@ -5,6 +5,10 @@ import CommentForm from './CommentForm';
 import IdeaOverview from './IdeaOverview';
 import LeaderInfo from './LeaderInfo';
 import { env } from '../../utils/EnvironmentVariables';
+import CircularProgress from '@mui/material/CircularProgress';
+import Box from '@mui/material/Box';
+import Typography from '@mui/material/Typography';
+import CircularIndeterminateLoader from '../Loader/CircularIndeterminateLoader'
 
 import './comments.css';
 import axios from 'axios';
@@ -26,6 +30,7 @@ function WorkshoppingPage(props) {
 
   const [handleChange, setHandleChange] = useState('');
   const [handleTextChange, setHandleTextChange] = useState('');
+  const [loading, setLoading] = React.useState(true);
 
 
   useEffect(() => {
@@ -35,6 +40,7 @@ function WorkshoppingPage(props) {
       .then(response => {
 
         if (response.status === 200 ) {
+          setLoading(false)
           setData(response.data)
         }
       })
@@ -49,6 +55,20 @@ function WorkshoppingPage(props) {
 
     <div className="container">
         <div >
+
+        {loading === true ? 
+          <CircularIndeterminateLoader 
+            text="Loading..."
+            color="white"
+          />
+          : 
+          ""
+        }
+
+
+
+
+
           <div>
             <IdeaOverview selectedCard={data} />
           </div>

@@ -8,11 +8,8 @@ import { env } from '../../utils/EnvironmentVariables';
 import {
   Wrapper,
   Headline,
-  Button,
-  Test,
   Question,
   Question2,
-  LastQuestion,
   Submit,
   Container,
   SubmitWrapper,
@@ -82,6 +79,7 @@ function SubmitIdeaForm() {
       experience: experience,
     }
 
+
     const res = await axios.post(`${env().STRAPI_URL}/idea-cards/`, state)
 
     if (res.status === 200 ) {
@@ -108,31 +106,11 @@ function SubmitIdeaForm() {
   };
 
 
-  const handleClick = (e, n) => {
-    setHourCommitmentMax(e);
-    setSelected(n)
-  }
+  // const handleClick = (e, n) => {
+  // setHourCommitmentMax(e);
+  //   setSelected(n)
+  // }
 
-
-  if (selected === '') {
-    return (
-      <Wrapper>
-        <Test>
-          <Headline>Dev Ideas</Headline>
-          <Description>
-            Have an idea for a development project?<br />
-            Want to help develop an idea?<br />
-            Let’s get started!
-          </Description>
-          <Button onClick={() => handleClick(1, 'PSI')}>Solving a Problem</Button>
-          <Button onClick={() => handleClick(2, 'Non-PSI')}>
-            I want to workshop someone else’s idea!
-            <p className="coming_soon">(Coming Soon)</p>
-          </Button>
-        </Test>
-      </Wrapper >
-    );
-  }
 
   if (selected === 'form') {
     return (

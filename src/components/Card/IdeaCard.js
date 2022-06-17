@@ -19,7 +19,27 @@ import CellText from './CellText/StyledCellText';
 
 import { Link } from 'react-router-dom';
 
-function Card({ cards, setSelectedCard }) {
+function IdeaCard({ cards, setSelectedCard }) {
+
+
+//   React.useEffect(() => {
+//     //axios.get('http://localhost:1337/idea-cards/')
+//     axios.get(`https://api.devlaunchers.org/idea-cards`,
+//       {
+//         withCredentials: true,
+//       }
+//     )
+//       .then(response => {
+//         const getCards = response.data.map((item) => {
+//           return item;
+//         });
+
+//         setCards(getCards);
+//       });
+//   }, []);
+
+// console.log(getCards)
+// console.log(env())
 
 
 
@@ -74,4 +94,4 @@ function Card({ cards, setSelectedCard }) {
   )
 }
 
-export default Card
+export default IdeaCard

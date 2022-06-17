@@ -5,8 +5,8 @@ import styled from 'styled-components';
 export const Wrapper = styled.div`
   background-color: #30363E;
   border-radius: 40px;
-  width: 50%;
-
+  width: 80%;
+  max-width:800px;
   margin: 0 auto;
   display: flex;
   justify-content: center;
@@ -20,12 +20,12 @@ export const Headline = styled.h3`
 `;
 
 export const Test = styled.div`
-  padding: 116px;
+  padding: 10%;
 `;
 
 export const Button = styled.button`
-  width: 550px;
-  height: 90px;
+  width: 100%;
+  height: auto;
 	background: #C4C4C4;
 	font-weight: bold;
 	color: #000000;
@@ -36,6 +36,7 @@ export const Button = styled.button`
   margin: 10px 5px;
   font-size:20px;
 `;
+
 
 export const Description = styled.p`
   color: #F1F4F5;
@@ -50,7 +51,7 @@ export const Question = styled.div`
    font-size: 15px;
    text-align: left ;
    float: left;
-   width: 100%;
+   width: 90%;
    margin-top: 5px;
    margin-bottom: 5px;
    margin-left: 10px;
@@ -75,7 +76,7 @@ export const Question2 = styled.div`
    font-size: 15px;
    text-align: left ;
    float: left;
-   width: 100%;
+   width: 90%;
    margin-top: 30px;
    margin-bottom: 5px;
    margin-left: 20px;
@@ -83,11 +84,12 @@ export const Question2 = styled.div`
   & input {
     display: inline-block;
     float: left;
-    width: 100%;
+    width: 90%;
     height: 100px;
     background-color: #c4c4c4;
     border: none;
     border-radius: 20px;
+    margin-left: 10px;
   }
 `;
 
@@ -124,6 +126,7 @@ export const Submit = styled.button`
 	padding: 7px 5px;
   margin-top: 80px;
   margin-bottom: 20px;
+  margin-right: 20px;
   font-size:20px;
   float: right;
 `;
