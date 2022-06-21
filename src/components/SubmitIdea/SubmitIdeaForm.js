@@ -49,7 +49,6 @@ function SubmitIdeaForm() {
   const [experience, setExperience] = useState('');
   //const [timeStamp, setTimeStamp] = useState(new Date());
 
-  console.log("SUBMIT IDEA FORM")
 
 
   const submitHandler = async e => {

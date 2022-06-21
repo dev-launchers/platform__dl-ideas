@@ -1,4 +1,5 @@
 import "./styles.css";
+import { useEffect } from 'react';
 import { Route, Switch, HashRouter } from 'react-router-dom';
 import SubmitIdeaForm from './components/SubmitIdea/SubmitIdeaForm';
 import WelcomePage from './components/welcomepage.js';
@@ -7,10 +8,19 @@ import Nav from './components/Nav/nav';
 import SubmitForm from './components/submitform';
 import React, { useState } from 'react';
 import IdeaCardList from "./components/Card/IdeaCardList"
+import { initGA, logPageView } from './analytics/Analytics';
 
 
 export default function App() {
   const [selectedCard, setSelectedCard] = useState({});
+
+
+  useEffect(() => {
+    initGA();
+    logPageView();
+
+  }, []);
+
 
 
   return (
