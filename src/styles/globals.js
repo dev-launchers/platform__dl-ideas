@@ -87,7 +87,7 @@ h1 {
   // background-color:${({ theme }) => theme.colors.NEUTRAL_1};
   // color:${({ theme }) => theme.colors.NEUTRAL_2};
 
-  border-bottom: .3rem solid ${({ theme }) => theme.colors.NEUTRAL_1};
+  /* border-bottom: .3rem solid ${({ theme }) => theme.colors.NEUTRAL_1}; */
 }
 
 h2 {

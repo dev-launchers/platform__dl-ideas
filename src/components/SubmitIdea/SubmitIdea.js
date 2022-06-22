@@ -12,7 +12,9 @@ import {
   Headline,
   Button,
   Test,
-  Description
+  Description,
+  ButtonArea,
+  StyledLink
 } from './styledSubmitIdea';
 
 
@@ -33,33 +35,27 @@ function SubmitIdea() {
             Let’s get started!
           </Description>
 
-          <div style={{
-            width:"100%",
-            height:"50vh",
-            display:"flex",
-            flexDirection:"row",
-            justifyContent:"space-around",
-            alignItems:"flex-start"
-          }}>
-            <Link to="/form" style={{width:"40%",height: "100%"}}>
-              <Button style={{width:"100%",height: "100%"}} onClick={() => handleClick(1, 'PSI')}>
-                <div style={{height:"20%"}}>
+
+          <ButtonArea>
+            <StyledLink to="/form">
+              <Button onClick={() => handleClick(1, 'PSI')}>
+                <div style={{height:"20%", display:"flex", alignItems:"center"}}>
                   Submit Your Idea!
                 </div>
                 <img src={submitButtonImage} style={{height:"70%"}} />
               </Button>
-            </Link>
+            </StyledLink>
 
 
-            <Link to="/cards" style={{width:"40%", height: "100%"}}>
-              <Button style={{width:"100%",height: "100%"}} onClick={() => handleClick(2, 'Non-PSI')}>
-                <div style={{height:"20%"}}>
+            <StyledLink to="/cards">
+              <Button onClick={() => handleClick(2, 'Non-PSI')}>
+                <div style={{height:"20%", display:"flex", alignItems:"center"}}>
                   Help Dev Launchers Members With Their Ideas!
                 </div>
                 <img src={helpButtonImage} style={{height:"70%"}} />
               </Button>
-            </Link>
-          </div>
+            </StyledLink>
+          </ButtonArea>
         </Grid>
       </Grid>
     );
