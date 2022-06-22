@@ -26,20 +26,24 @@ export const Test = styled.div`
 export const Button = styled.button`
   width: 100%;
   height: auto;
-	background: #C4C4C4;
-	font-weight: bold;
-	color: #000000;
+	/* background: #C4C4C4; */
+	/* font-weight: bold; */
+	color: ${({ theme }) => theme.colors.NEUTRAL_2};
 	border: 0 none;
 	border-radius: 30px;
 	cursor: pointer;
 	padding: 30px 5px;
   margin: 10px 5px;
-  font-size:20px;
+  font-size:2rem;
+  font-family: "Abel";
+  background-color: ${({ theme }) => theme.colors.NEUTRAL_1};
 `;
 
 
 export const Description = styled.p`
-  color: #F1F4F5;
+  /* color: #F1F4F5; */
+  color: black;
+  text-align: center;
 `;
 
 export const Question = styled.div`

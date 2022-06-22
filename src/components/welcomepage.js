@@ -12,7 +12,6 @@ export default function WelcomePage() {
 
         <div id="welcomeWrapper">
           <h1>DL-Ideas</h1>
-          <h2>Welcome to the project</h2>
           <SubmitIdea />
         </div>
 
