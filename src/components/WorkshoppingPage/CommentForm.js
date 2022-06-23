@@ -28,7 +28,7 @@ function CommentForm(props) {
 // move to WorkshoppingPage
   return (
     <div >
-      <form onSubmit={handleSubmit} >
+      <form onSubmit={handleSubmit} className="form_box">
       <div className="user_name_comment_box">
           <input
             className="user_name_comment"
@@ -38,8 +38,10 @@ function CommentForm(props) {
             value={props.handleChange}
             onChange={handleChange}
           />
-        </div>
-        <div className="user_comment">
+      </div>
+
+
+      <div className="user_comment">
           <img alt="user_image" className="userImageOne" src={`https://picsum.photos/70?random=${props.id}`} />
           <input
             type="text"
@@ -48,8 +50,15 @@ function CommentForm(props) {
             value={props.handleTextChange}
             onChange={handleTextChange}
           />
-        </div>
-        <button type="submit">Submit</button>
+      </div>
+      <div className="button_box" >
+      <button type="submit">Submit</button>
+      </div>
+      <div className="side_button_box">
+
+      </div>
+
+
       </form>
     </div>
   );
