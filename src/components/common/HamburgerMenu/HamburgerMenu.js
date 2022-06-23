@@ -65,12 +65,12 @@ function HamburgerMenu() {
         </div>
         <div>
           <div className={style.HeaderNav} onClick={handleNavClick}>
-            <Link href={"/create"} passHref>
+            <Link href={"https://devlaunchers.org/create"} passHref>
               <a className="nav-link">
                 <div className={style.navEntry}>CREATE</div>
               </a>
             </Link>
-            <Link href={"/learn"} passHref>
+            <Link href={"https://devlaunchers.org/learn"} passHref>
               <a className="nav-link">
                 <div className={style.navEntry}>LEARN</div>
               </a>
@@ -79,7 +79,7 @@ function HamburgerMenu() {
             <div>
               {userData?.id ? (
                 <>
-                  <Link href={"/users/me"} passHref>
+                  <Link href={"https://devlaunchers.org/users/me"} passHref>
                     <a className="nav-link">
                       <div className={style.navEntry}>VISIT ACCOUNT PAGE</div>
                     </a>
@@ -100,17 +100,17 @@ function HamburgerMenu() {
               <div className={style.navEntry}>PLAY</div>
             </Link>
             { */}
-            <Link href={"/earn"} passHref>
+            <Link href={"https://devlaunchers.org/earn"} passHref>
               <a className="nav-link">
                 <div className={style.navEntry}>EARN</div>
               </a>
             </Link>
-            <Link href={"/support-us"} passHref>
+            <Link href={"https://devlaunchers.org/support-us"} passHref>
               <a className="nav-link">
                 <div className={style.navEntry}>SUPPORT US</div>
               </a>
             </Link>
-            <Link href={"/projects"} passHref>
+            <Link href={"https://devlaunchers.org/projects"} passHref>
               <a className="nav-link">
                 <div className={style.navEntry}>JOIN</div>
               </a>

@@ -23,7 +23,7 @@ export default function Header() {
     <HeaderBlock>
       <Logo>
         <LogoWrapper>
-          <Link href="../" replace>
+          <Link href="https://devlaunchers.org/" replace>
             <a>
               <LogoImageHolder>
                 <LogoImage />
@@ -34,12 +34,12 @@ export default function Header() {
         </LogoWrapper>
       </Logo>
       <HeaderNav>
-        <Link href="../create" replace>
+        <Link href="https://devlaunchers.org/create" replace>
           <a>
             <NavEntry>CREATE</NavEntry>
           </a>
         </Link>
-        <Link href="../learn" replace>
+        <Link href="https://devlaunchers.org/learn" replace>
           <a>
             <NavEntry>LEARN</NavEntry>
           </a>
@@ -49,12 +49,12 @@ export default function Header() {
             <NavEntry>PLAY</NavEntry>
           </Link>
           { */}
-        <Link href="../support-us" replace>
+        <Link href="https://devlaunchers.org/support-us" replace>
           <a>
             <NavEntry>SUPPORT US</NavEntry>
           </a>
         </Link>
-        <Link href="/">
+        <Link href="https://devlaunchers.org/projects">
           <a>
             <NavEntry>JOIN</NavEntry>
           </a>
