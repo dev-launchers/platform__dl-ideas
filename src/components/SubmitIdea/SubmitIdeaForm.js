@@ -49,7 +49,6 @@ function SubmitIdeaForm() {
   const [experience, setExperience] = useState('');
   //const [timeStamp, setTimeStamp] = useState(new Date());
 
-  console.log("SUBMIT IDEA FORM")
 
 
   const submitHandler = async e => {
@@ -122,7 +121,7 @@ function SubmitIdeaForm() {
             Share your idea with us!<br />
           </Description>
           <form onSubmit={submitHandler}>
-            <div className="test">
+            {/* <div className="test">
               <div className="progress_bar">
                 <div className="circule"><div className="completed"></div><p>Idea Form</p></div>
                 <div className="circule"><div className=""></div><p>Review</p></div>
@@ -130,7 +129,7 @@ function SubmitIdeaForm() {
                 <div className="circule"><div className=""></div><p>Recruitment</p></div>
                 <div className="circule"><div className=""></div><p>Project</p></div>
               </div>
-            </div>
+            </div> */}
             <Question>
               <p>Idea Name</p>
               <input required type="text" name="ideaName" value={ideaName} onChange={(e) => setIdeaName(e.target.value)} />
@@ -176,15 +175,16 @@ workshopping stage !</p>
     )
   }
 
+
   if (selected === 'submited') {
     return (
       <Wrapper>
         <SubmitWrapper>
           <p>Thank you for submitting your idea!
-Next your idea will move on to the workshopping phase. </p>
-          <Link to={`/workshopping/${ideaId}`} >
-            <button>Next</button>
-          </Link>
+            Next your idea will move on to the workshopping phase. </p>
+            <Link to={`/workshopping/${ideaId}`} >
+              <button>Next</button>
+            </Link>
         </SubmitWrapper>
       </Wrapper>
     )

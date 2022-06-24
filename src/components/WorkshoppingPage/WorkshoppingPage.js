@@ -68,7 +68,6 @@ function WorkshoppingPage(props) {
 
 
 
-
           <div>
             <IdeaOverview selectedCard={data} />
           </div>
