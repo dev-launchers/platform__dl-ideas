@@ -114,65 +114,68 @@ function SubmitIdeaForm() {
 
   if (selected === 'form') {
     return (
-      <Wrapper>
-        <Container>
-          <Headline>Dev Ideas</Headline>
-          <Description>
-            Have an idea for a development project?<br />
-            Share your idea with us!<br />
-          </Description>
-          <form onSubmit={submitHandler}>
-            <div className="test">
-              <div className="progress_bar">
-                <div className="circule"><div className="completed"></div><p>Idea Form</p></div>
-                <div className="circule"><div className=""></div><p>Review</p></div>
-                <div className="circule"><div className=""></div><p>Workshopping</p></div>
-                <div className="circule"><div className=""></div><p>Recruitment</p></div>
-                <div className="circule"><div className=""></div><p>Project</p></div>
-              </div>
-            </div>
-            <Question>
-              <p>Idea Name</p>
-              <input required type="text" name="ideaName" value={ideaName} onChange={(e) => setIdeaName(e.target.value)} />
-            </Question>
-            <Question>
-              <p>Your Discord Name</p>
-              <input required type="text" name="discord" value={discord} onChange={(e) => setDiscord(e.target.value)} />
-            </Question>
-            <Question>
-              <p>Your Email</p>
-              <input required type="text" name="email" value={email} onChange={(e) => setEmail(e.target.value)} />
-            </Question>
-            <Question>
-              <p>Do you have a Calendly? If so add a link here, if not it’s okay!</p>
-              <input required type="text" name="calendly" value={calendly} onChange={(e) => setCalendly(e.target.value)} />
-            </Question>
-            <Question2>
-              <p>What is your experience with development?</p>
-              <input type='text' name='experience' value={experience} onChange={(e) => setExperience(e.target.value)} />
-            </Question2>
-            <Question2>
-              <p>What is your idea?</p>
-              <input type='text' name='description' value={description} onChange={(e) => setDescription(e.target.value)} />
-            </Question2>
-            <Question2>
-              <p>Why do you think your idea is helpful or would be fun?</p>
-              <input type='text' name='targetAudience' value={targetAudience} onChange={(e) => setTargetAudience(e.target.value)} />
-            </Question2>
-            <Question2>
-              <p>What features would your idea have?</p>
-              <input type='text' name='features' value={features} onChange={(e) => setFeatures(e.target.value)} />
-            </Question2>
-            <Question2>
-              <p>Anything else you want to share with us?</p>
-              <input type='text' name='tagline' value={tagline} onChange={(e) => setTagline(e.target.value)} />
-            </Question2>
-            <p className="text">After submitting your idea will be reviewed and enter the
-workshopping stage !</p>
-            <Submit type="submit"> {sending === true ? "Wait" : "Submit"} </Submit>
-          </form>
-        </Container>
-      </Wrapper>
+      <div>
+        <Headline>Dev Ideas</Headline>
+        <Description>
+          Have an idea for a development project?<br />
+          Share your idea with us!<br />
+        </Description>
+        <Wrapper>
+          <Container>
+              <form onSubmit={submitHandler}>
+                <div className="test">
+                  <div className="progress_bar">
+                    <div className="circule"><div className="completed"></div><p>Idea Form</p></div>
+                    <div className="circule"><div className=""></div><p>Review</p></div>
+                    <div className="circule"><div className=""></div><p>Workshopping</p></div>
+                    <div className="circule"><div className=""></div><p>Recruitment</p></div>
+                    <div className="circule"><div className=""></div><p>Project</p></div>
+                  </div>
+                </div>
+                <Question>
+                  <p>Idea Name</p>
+                  <input required type="text" name="ideaName" value={ideaName} onChange={(e) => setIdeaName(e.target.value)} />
+                </Question>
+                <Question>
+                  <p>Your Discord Name</p>
+                  <input required type="text" name="discord" value={discord} onChange={(e) => setDiscord(e.target.value)} />
+                </Question>
+                <Question>
+                  <p>Your Email</p>
+                  <input required type="text" name="email" value={email} onChange={(e) => setEmail(e.target.value)} />
+                </Question>
+                <Question>
+                  <p>Do you have a Calendly? If so add a link here, if not it’s okay!</p>
+                  <input required type="text" name="calendly" value={calendly} onChange={(e) => setCalendly(e.target.value)} />
+                </Question>
+                <Question2>
+                  <p>What is your experience with development?</p>
+                  <input type='text' name='experience' value={experience} onChange={(e) => setExperience(e.target.value)} />
+                </Question2>
+                <Question2>
+                  <p>What is your idea?</p>
+                  <input type='text' name='description' value={description} onChange={(e) => setDescription(e.target.value)} />
+                </Question2>
+                <Question2>
+                  <p>Why do you think your idea is helpful or would be fun?</p>
+                  <input type='text' name='targetAudience' value={targetAudience} onChange={(e) => setTargetAudience(e.target.value)} />
+                </Question2>
+                <Question2>
+                  <p>What features would your idea have?</p>
+                  <input type='text' name='features' value={features} onChange={(e) => setFeatures(e.target.value)} />
+                </Question2>
+                <Question2>
+                  <p>Anything else you want to share with us?</p>
+                  <input type='text' name='tagline' value={tagline} onChange={(e) => setTagline(e.target.value)} />
+                </Question2>
+                <p className="text">After submitting your idea will be reviewed and enter the
+    workshopping stage !</p>
+                <Submit type="submit"> {sending === true ? "Wait" : "Submit"} </Submit>
+              </form>
+            </Container>
+        </Wrapper>
+        <br />
+      </div>
     )
   }
 

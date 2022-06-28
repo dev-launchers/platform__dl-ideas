@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 
 
 export const Wrapper = styled.div`
-  background-color: #30363E;
+  background-color: ${({ theme }) => theme.colors.NEUTRAL_1};
   border-radius: 40px;
   width: 80%;
   max-width:800px;
@@ -12,14 +12,9 @@ export const Wrapper = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
+  margin-bottom:2rem;
+  border: .3rem solid ${({ theme }) => theme.colors.ACCENT_2};
 `;
-
-export const Headline = styled.h3`
-  font-size: 40px;
-  color: #D3D4D6;
-  margin-top:40px;
-`;
-
 export const Test = styled.div`
   padding: 10%;
 `;
@@ -81,6 +76,14 @@ export const Button = styled.button`
 `;
 
 
+export const Headline = styled.h3`
+  width: 100%;
+  text-align:center;
+  font-size: 40px;
+  color: ${({ theme }) => theme.colors.NEUTRAL_1};
+  padding-top:2rem;
+`;
+
 export const Description = styled.p`
   /* color: #F1F4F5; */
   color: black;
@@ -106,7 +109,7 @@ export const Question = styled.div`
     float: left;
     width: 70%;
     height: 30px;
-    background-color: #c4c4c4;
+    background-color: white;
     border: none;
     border-radius: 20px;
   }
@@ -131,7 +134,7 @@ export const Question2 = styled.div`
     float: left;
     width: 90%;
     height: 100px;
-    background-color: #c4c4c4;
+    background-color: white;
     border: none;
     border-radius: 20px;
     margin-left: 10px;
@@ -162,9 +165,9 @@ export const LastQuestion = styled.div`
 
 export const Submit = styled.button`
   width: 130px;
-	background: #C4C4C4;
+	background: ${({ theme }) => theme.colors.ACCENT_3};
+	color: white;
 	font-weight: bold;
-	color: #000000;
 	border: 0 none;
 	border-radius: 15px;
 	cursor: pointer;
