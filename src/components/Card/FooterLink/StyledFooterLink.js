@@ -8,7 +8,10 @@ const FooterLink = styled.a`
   line-height: 15px;
   letter-spacing: 0.21666669845581055px;
   text-align: center;
-  color: #FFF;
+  color:white;
+  a {
+    color:white;
+  }
 `
 
 export default FooterLink;
