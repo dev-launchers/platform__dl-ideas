@@ -1,4 +1,10 @@
-import axios from "axios"
+import axios from "axios";
+import {
+  UserNameCommentBox,
+  UserNameComment,
+  UserComment,
+  UserImageOne
+} from './StyledComments.js';
 
 function CommentForm(props) {
 
@@ -29,18 +35,17 @@ function CommentForm(props) {
   return (
     <div >
       <form onSubmit={handleSubmit} >
-      <div className="user_name_comment_box">
-          <input
-            className="user_name_comment"
+        <UserNameCommentBox>
+          <UserNameComment
             type="text"
             name="author"
             placeholder="Your name..."
             value={props.handleChange}
             onChange={handleChange}
           />
-        </div>
-        <div className="user_comment">
-          <img alt="user_image" className="userImageOne" src={`https://picsum.photos/70?random=${props.id}`} />
+        </UserNameCommentBox>
+        <UserComment>
+          <UserImageOne alt="user_image" src={`https://picsum.photos/70?random=${props.id}`} />
           <input
             type="text"
             name="text"
@@ -48,7 +53,7 @@ function CommentForm(props) {
             value={props.handleTextChange}
             onChange={handleTextChange}
           />
-        </div>
+        </UserComment>
         <button type="submit">Submit</button>
       </form>
     </div>

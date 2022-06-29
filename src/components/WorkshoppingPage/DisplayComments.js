@@ -19,7 +19,7 @@ function DisplayComments(props) {
     </Comment>
   ));
   return (
-    <div >
+    <div>
       {commentNodes}
     </div>
   );
