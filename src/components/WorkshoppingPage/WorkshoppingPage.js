@@ -10,7 +10,6 @@ import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
 import CircularIndeterminateLoader from '../Loader/CircularIndeterminateLoader'
 
-import './comments.css';
 import axios from 'axios';
 
 import {

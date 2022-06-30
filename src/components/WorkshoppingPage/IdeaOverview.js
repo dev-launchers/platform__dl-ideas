@@ -1,5 +1,4 @@
 
-import './comments.css';
 import {
   Idea,
   IdeaName,
