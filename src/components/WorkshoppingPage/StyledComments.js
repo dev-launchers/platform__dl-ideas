@@ -63,13 +63,13 @@ export const UserNameCommentBox = styled.div`
 `;
 
 export const UserNameComment = styled.input`
-  width: 100%;
+  /* width: 100%; */
   min-width: 200px;
+  height: 1.2rem;
   background-color: ${({ theme }) => theme.colors.NEUTRAL_1};
   border-radius: 25px;
   padding: 20px;
 
-  float:left;
 `;
 
 
@@ -112,24 +112,16 @@ export const Form = styled.div`
     display: flex;
     padding: 15px 0;
     flex-wrap: wrap;
-    justify-content: flex-end;
+    justify-content: flex-start;
   }
 
   input {
-    height: 80px;
     padding-left: 10px;
     border: 1px solid #c1c1c1;
     background-color: white;
     margin-right: 10px;
     border-radius: 25px;
-    width: 85%;
-    float: right;
   }
-
-  input:first-child {
-    width: 100%;
-    height: 30px;
-  }     
 
   button {
     margin-top: 10px;
@@ -139,7 +131,8 @@ export const Form = styled.div`
     border-radius: 25px;
     border: 1px solid #999;
     background-color: #C3C0C0;
-    float: right;
+    margin-right: 0;
+    margin-left: auto;
   }
 
   button:hover {
@@ -159,6 +152,11 @@ export const UserComment = styled.div`
   border-radius: 20px;
   display: flex;
   align-items: center;
+
+  input {
+    width: 100%;
+    height: 3rem;
+  }
 `;
 
 
