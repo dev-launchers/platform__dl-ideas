@@ -4,6 +4,8 @@ import { Link } from 'react-router-dom'
 import SubmitIdeaForm from '../SubmitIdea/SubmitIdeaForm'
 import Grid from '@mui/material/Grid';
 
+import AppIdeaGeneratorButton from '../IdeaGeneratorButton/AppIdeaGeneratorButton';
+
 import submitButtonImage from "../../images/submit-image.png";
 import helpButtonImage from "../../images/help-image.png";
 
@@ -34,6 +36,8 @@ function SubmitIdea() {
             Want to help develop an idea?<br />
             Let’s get started!
           </Description>
+
+          <AppIdeaGeneratorButton style={{marginLeft:"auto", marginRight:"auto"}} />
 
 
           <ButtonArea>
