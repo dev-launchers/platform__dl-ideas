@@ -10,7 +10,7 @@ const CardsWrapper = styled.ul`
   margin: 0 auto;
   justify-content: center;
   align-items: center;
-  gap:10px;
-`
+  gap: 10px;
+`;
 
 export default CardsWrapper;
