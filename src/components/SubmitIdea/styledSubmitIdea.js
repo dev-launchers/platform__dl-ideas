@@ -12,6 +12,7 @@ export const Wrapper = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
+  padding:20px
 `;
 
 export const Headline = styled.h3`
@@ -79,6 +80,7 @@ export const Button = styled.button`
     flex-direction: column;
   }
 `;
+
 
 
 export const Description = styled.p`
@@ -184,21 +186,26 @@ export const Container = styled.div`
 
 export const SubmitWrapper = styled.div`
   background-color: #C9CACC;
-  height: 300px;
+  height: auto;
   border-radius: 30px;
-  width: 80%; 
+  width: 90%;
+  max-width:500px; 
   display: flex;
   flex-direction: column;
   justify-content: center;
+  padding: 10px;
 
   & p {
-    font-size: 30px;
+    font-size: 2.2rem;
     font-weight: bold;
     padding: 0 15% 0 15%; 
+    @media screen and (max-width: 600px) {
+      font-size: 1.6rem;
+    }
   }
-
+  
   & button {
-   width: 100px;
+   width: 200px;
    margin: 0 auto;
    background: #89969F;
 	 font-weight: bold;

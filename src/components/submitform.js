@@ -49,7 +49,7 @@ function SubmitForm() {
 
     axios.post(`https://api.devlaunchers.org/idea-cards`, state)
       .then(response => {
-        console.log(response);
+
       });
 
 
