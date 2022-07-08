@@ -9,9 +9,10 @@ function DisplayComments(props) {
   useEffect(() => {
     axios.get(`https://api-staging.devlaunchers.org/idea-cards/${props.selectedCard.id}/`)
       .then(response => {
-        setData(response.data.comments)
+        setData((response.data.comments).sort((a, b) => a.published_at < b.published_at ? 1 : -1))
       })
   })
+
 
   const commentNodes = data.map(comment => (
     <Comment author={comment.author} key={comment._id} id={comment._id}>

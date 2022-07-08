@@ -1,4 +1,5 @@
 import "./styles.css";
+import { useEffect } from 'react';
 import { Route, Switch, HashRouter } from 'react-router-dom';
 import { ThemeProvider } from "styled-components";
 import GlobalStyle from "./styles/globals";
@@ -13,10 +14,19 @@ import Header from "./components/common/Header";
 import RainbowBar from "./components/common/RainbowBar";
 
 import theme from "./styles/theme";
+import { initGA, logPageView } from './analytics/Analytics';
 
 
 export default function App() {
   const [selectedCard, setSelectedCard] = useState({});
+
+
+  useEffect(() => {
+    initGA();
+    logPageView();
+
+  }, []);
+
 
 
   return (

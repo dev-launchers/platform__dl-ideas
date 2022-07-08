@@ -3,6 +3,11 @@ import React from 'react';
 import SubmitIdea from '../components/SubmitIdea/SubmitIdea';
 import Grid from '@mui/material/Grid';
 
+import ReactGA from "react-ga";
+
+
+
+
 
 
 export default function WelcomePage() {

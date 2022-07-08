@@ -4,9 +4,13 @@ const CardsWrapper = styled.ul`
   display: flex;
   flex-wrap: wrap;
   list-style: none;
-  width: 1280px;
+  width: 100%;
+  max-width: 1900px;
   padding: 0;
   margin: 0 auto;
+  justify-content: center;
+  align-items: center;
+  gap:10px;
 `
 
 export default CardsWrapper;
