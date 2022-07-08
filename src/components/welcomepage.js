@@ -16,8 +16,9 @@ export default function WelcomePage() {
       <Grid item xs={12} sm={12} md={12} lg={12} xl={12}>
 
         <div id="welcomeWrapper">
-          <h1>DL-Ideas</h1>
-          <h2>Welcome to the project</h2>
+          <h1 style={{width:"100%",textAlign:"center"}}>
+            Dev Ideas
+          </h1>
           <SubmitIdea />
         </div>
 

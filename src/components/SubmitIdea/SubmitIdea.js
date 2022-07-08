@@ -4,14 +4,17 @@ import { Link } from 'react-router-dom'
 import SubmitIdeaForm from '../SubmitIdea/SubmitIdeaForm'
 import Grid from '@mui/material/Grid';
 
-
+import submitButtonImage from "../../images/submit-image.png";
+import helpButtonImage from "../../images/help-image.png";
 
 import {
   Wrapper,
   Headline,
   Button,
   Test,
-  Description
+  Description,
+  ButtonArea,
+  StyledLink
 } from './styledSubmitIdea';
 
 
@@ -26,31 +29,33 @@ function SubmitIdea() {
     return (
       <Grid container spacing={2}>
         <Grid item xs={12} sm={12} md={12} lg={12} xl={12}>
-          <Wrapper>
-            <Test>
-              <Headline>Dev Ideas</Headline>
-              <Description>
-                Have an idea for a development project?<br />
-                Want to help develop an idea?<br />
-                Let’s get started!
-              </Description>
+          <Description>
+            Have an idea for a development project?<br />
+            Want to help develop an idea?<br />
+            Let’s get started!
+          </Description>
 
 
-              <Link to="/form" >
-                <Button onClick={() => handleClick(1, 'PSI')}>Solving a Problem</Button>
-              </Link>
+          <ButtonArea>
+            <StyledLink to="/form">
+              <Button onClick={() => handleClick(1, 'PSI')}>
+                <div style={{height:"20%", display:"flex", alignItems:"center"}}>
+                  Submit Your Idea!
+                </div>
+                <img src={submitButtonImage} style={{height:"70%"}} />
+              </Button>
+            </StyledLink>
 
 
-
-
-              <Link to="/cards">
-                <Button onClick={() => handleClick(2, 'Non-PSI')}>
-                  I want to workshop someone else’s idea!
-                <p className="coming_soon">(Coming Soon)</p>
-                </Button>
-              </Link>
-            </Test>
-          </Wrapper >
+            <StyledLink to="/cards">
+              <Button onClick={() => handleClick(2, 'Non-PSI')}>
+                <div style={{height:"20%", display:"flex", alignItems:"center"}}>
+                  Help Dev Launchers Members With Their Ideas!
+                </div>
+                <img src={helpButtonImage} style={{height:"70%"}} />
+              </Button>
+            </StyledLink>
+          </ButtonArea>
         </Grid>
       </Grid>
     );
