@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
-import './submitIdea.css'
 import { Link } from 'react-router-dom'
-import SubmitIdeaForm from '../SubmitIdea/SubmitIdeaForm'
+import SubmitIdeaForm from '../SubmiteIdeaForm/SubmitIdeaForm'
 import Grid from '@mui/material/Grid';
 
 import submitButtonImage from "../../images/submit-image.png";
@@ -11,11 +10,10 @@ import {
   Wrapper,
   Headline,
   Button,
-  Test,
   Description,
   ButtonArea,
   StyledLink
-} from './styledSubmitIdea';
+} from './StyledSubmitIdea';
 
 
 function SubmitIdea() {

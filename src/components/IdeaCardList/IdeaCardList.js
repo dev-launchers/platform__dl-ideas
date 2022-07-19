@@ -1,12 +1,9 @@
 import React from 'react'
 import CircularIndeterminateLoader from '../Loader/CircularIndeterminateLoader'
-import IdeaCard from './IdeaCard'
-import StyledIdeaCards from './StyledIdeaCards/StyledIdeaCards'
-import StyledCardsWrapper from '../CardsWrapper/StyledCardsWrapper';
+import IdeaCard from '../IdeaCard/IdeaCard'
+import { CardListBackground, CardsWrapper } from './StyledIdeaCardList'
 import axios from "axios";
 import { env } from "../../utils/EnvironmentVariables";
-import Grid from '@mui/material/Grid';
-
 
 
 function IdeaCardList() {
@@ -33,26 +30,12 @@ function IdeaCardList() {
 
 
   return (
-
-
-
-
-      <StyledIdeaCards>
-          <StyledCardsWrapper>
-
-
-
+      <CardListBackground>
+          <CardsWrapper>
             {cards.map((item) => {
               return <IdeaCard key={item.id} cards={item} setSelectedCard={setSelectedCard} />
             })}
-
-
-
-
-
-          </StyledCardsWrapper>
-
-
+          </CardsWrapper>
             {loading === true ? 
               <CircularIndeterminateLoader 
                 text="Loading..."
@@ -61,10 +44,7 @@ function IdeaCardList() {
               : 
               ""
             }
-        </StyledIdeaCards>
-
-    
-
+        </CardListBackground>
   )
 }
 

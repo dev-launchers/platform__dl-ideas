@@ -1,23 +1,29 @@
 import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
-import './nav.css';
+
+
+
+import {
+  NavBar  
+} from "./StyledNav";
+
 
 const Nav = function (props) {
 
-
-
   return (
-    <div className="nav">
-      <Link to="/">
+
+    <NavBar>
+      <Link to="/" style={{color: "#FFFFFF", marginLeft: "10px"}}>
         <h3>Home</h3>
       </Link>
-      <Link to="/form">
+      <Link to="/form" style={{color: "#FFFFFF", marginLeft: "10px"}}>
         <h3>Submit an Idea</h3>
       </Link>
-      <Link to="/cards">
+      <Link to="/cards" style={{color: "#FFFFFF", marginLeft: "10px"}}>
         <h3>Potential Projects</h3>
       </Link>
-    </div>
+    </NavBar>
+
   )
 }
 

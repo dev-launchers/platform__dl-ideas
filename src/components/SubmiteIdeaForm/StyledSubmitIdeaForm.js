@@ -1,6 +1,4 @@
 import styled from 'styled-components';
-import { Link } from "react-router-dom";
-
 
 
 export const Wrapper = styled.div`
@@ -21,72 +19,6 @@ export const Headline = styled.h3`
   margin-top:40px;
 `;
 
-export const Test = styled.div`
-  padding: 10%;
-`;
-
-export const ButtonArea = styled.div`
-  width: 100%;
-  height: 50vh;
-  max-width: 1700px;
-  max-height: 500px;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-around;
-  align-items: flex-start;
-  margin-left:auto;
-  margin-right:auto;
-
-  @media (orientation: portrait) {
-    flex-direction: column;
-    justify-content: space-around;
-    align-items: center;
-    width: 80%;
-    height: 60vh;
-  }
-`;
-
-export const StyledLink = styled(Link)`
-  width: 40%;
-  height: 100%;
-
-  @media (orientation: portrait) {
-    width: 100%;
-    height: 40%;
-  }
-`;
-
-export const Button = styled.button`
-  width: 100%;
-  height: 100%;display:flex;
-  flex-direction: column;
-  justify-content: space-between;
-  align-items: center;
-
-	/* background: #C4C4C4; */
-	/* font-weight: bold; */
-	color: ${({ theme }) => theme.colors.NEUTRAL_2};
-	border: 0 none;
-	border-radius: 30px;
-	cursor: pointer;
-	padding: 2rem;
-  margin: 10px 5px;
-  font-size:2rem;
-  font-family: "Abel";
-  background-color: ${({ theme }) => theme.colors.NEUTRAL_1};
-
-  @media (orientation: portrait) {
-    font-size:1.5rem;
-    flex-direction: column;
-  }
-`;
-
-
-
-export const Description = styled.p`
-  color: #30363E;
-  text-align: center;
-`;
 
 export const Question = styled.div`
   margin-left: 10px;
@@ -139,27 +71,6 @@ export const Question2 = styled.div`
   }
 `;
 
-export const LastQuestion = styled.div`
-  clear: both;
-
-  & p {
-   display: inline-block;
-   color: #ffffff;
-   font-size: 20px;
-   text-align: left ;
-   float: right;
-
-  }
-  & input {
-    display: inline-block;
-    float: left;
-    width: 235px;
-    height: 30px;
-    background-color: #c4c4c4;
-    border: none;
-    border-radius: 20px;
-  }
-`;
 
 export const Submit = styled.button`
   width: 130px;
@@ -176,6 +87,8 @@ export const Submit = styled.button`
   font-size:20px;
   float: right;
 `;
+
+
 
 export const Container = styled.div`
   width: 535px;
@@ -200,9 +113,8 @@ export const SubmitWrapper = styled.div`
     padding: 0 15% 0 15%; 
     @media screen and (max-width: 600px) {
       font-size: 1.6rem;
-    }
   }
-  
+
   & button {
    width: 200px;
    margin: 0 auto;
@@ -216,3 +128,95 @@ export const SubmitWrapper = styled.div`
    font-size:20px;
     }
   `;
+
+  
+  export const Description = styled.p`
+  color: #F1F4F5;
+`;
+
+
+export const Text = styled.p`
+  width: 60%;
+  text-align: left;
+  color: #ffffff;
+  margin: 20px 0 0 20px;
+  font-size:15px;
+  float: left;
+`;
+
+// .text {
+//   width: 60%;
+//   text-align: left;
+//   color: #ffffff;
+//   margin: 20px 0 0 20px;
+//   font-size:15px;
+//   float: left;
+// }
+
+
+// CSS CODE OF SUBMIT PAGE STEPER STEPER
+// .progress_bar {
+//   background-color: white;
+//   height: 7.35px;
+//   display: flex;
+//   justify-content: space-between;
+//   align-items: center;
+//   margin-bottom: 70px;
+// }
+
+// .circule {
+//   height: 50px ;
+//   width: 50px;
+//   background-color: white;
+//   border-radius: 50%;
+// }
+
+// .circule p {
+//   position: relative;
+//   color: white;
+//   bottom: -55px;
+//   font-size: 10px;
+// }
+
+// form {
+//   margin-top: 70px;
+// }
+
+// .idea_form {
+//   height: 40px;
+//   width: 40px;
+//   border-radius: 50px;
+//   position: relative;
+//   left: 5px;
+//   top: 5px;
+// }
+
+// .completed {
+//   background-color: #322E2E;
+//   height: 40px;
+//   width: 40px;
+//   border-radius: 50px;
+//   position: relative;
+//   left: 5px;
+//   top: 5px;
+//   margin-bottom: -40px;
+// }
+
+// .text {
+//   width: 60%;
+//   text-align: left;
+//   color: #ffffff;
+//   margin: 20px 0 0 20px;
+//   font-size:15px;
+//   float: left;
+// }
+
+// .coming_soon {
+//   color: #89969F;
+//   font-size: 14px;
+//   padding-top: 10px;
+// }
+
+// a:visited {
+//   color: black;
+// }

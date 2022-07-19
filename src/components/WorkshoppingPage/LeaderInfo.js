@@ -1,5 +1,11 @@
 
-import './comments.css';
+
+
+import {
+  LeaderWrap,
+  LeaderName,
+  LeaderInfoWrap,
+} from './StyledLeaderInfo';
 
 
 function formatDate(string){
@@ -13,22 +19,27 @@ function LeaderInfo(props) {
   const {selectedCard, ...other} = props;
 
   return (
-    <div className="leader">
+      <LeaderWrap>
+        <LeaderInfoWrap>
+          <LeaderName>
+              <img alt="leader_image" src={`https://picsum.photos/70?random=${props.id}`} 
+              style={{
+                height: "30px",
+                marginRight: "10px",
+                borderRadius: "50%",
+              }}/>
 
-
-        <div className="leader_info" align="right" >
-          <div className="leader_name" align="right">
-            <img alt="user_image" className="leader_image" src={`https://picsum.photos/70?random=${props.id}`} />
             {props.selectedCard.discord}
-          </div>
+          </LeaderName>
+
         <h6>
         <p>Submitted: {formatDate(props.selectedCard.created_at)}</p>
         <p>Contact</p>
           <p>email: {props.selectedCard.email}</p>
           <p>discord: {props.selectedCard.discord}</p>
         </h6>
-      </div>
-    </div>
+        </LeaderInfoWrap>
+      </LeaderWrap>
   )
 }
 

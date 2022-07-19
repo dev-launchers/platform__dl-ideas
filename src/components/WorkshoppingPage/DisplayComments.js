@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import Comment from './SingleComment';
+import SingleComment from './SingleComment';
 import axios from 'axios';
 
 function DisplayComments(props) {
@@ -15,9 +15,9 @@ function DisplayComments(props) {
 
 
   const commentNodes = data.map(comment => (
-    <Comment author={comment.author} key={comment._id} id={comment._id}>
+    <SingleComment author={comment.author} key={comment._id} id={comment._id}>
       {comment.text}
-    </Comment>
+    </SingleComment>
   ));
   return (
     <div >

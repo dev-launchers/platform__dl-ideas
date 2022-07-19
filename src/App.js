@@ -3,13 +3,13 @@ import { useEffect } from 'react';
 import { Route, Switch, HashRouter } from 'react-router-dom';
 import { ThemeProvider } from "styled-components";
 import GlobalStyle from "./styles/globals";
-import SubmitIdeaForm from './components/SubmitIdea/SubmitIdeaForm';
+import SubmitIdeaForm from './components/SubmiteIdeaForm/SubmitIdeaForm';
 import WelcomePage from './components/welcomepage.js';
 import WorkshoppingPage from './components/WorkshoppingPage/WorkshoppingPage.js';
 import Nav from './components/Nav/nav';
 import SubmitForm from './components/submitform';
 import React, { useState } from 'react';
-import IdeaCardList from "./components/Card/IdeaCardList"
+import IdeaCardList from "./components/IdeaCardList/IdeaCardList"
 import Header from "./components/common/Header";
 import RainbowBar from "./components/common/RainbowBar";
 

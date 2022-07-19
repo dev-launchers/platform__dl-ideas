@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import axios from 'axios';
-import './submitIdea.css'
 import { Link } from 'react-router-dom';
 
 import { env } from '../../utils/EnvironmentVariables';
@@ -13,8 +12,9 @@ import {
   Submit,
   Container,
   SubmitWrapper,
-  Description
-} from './styledSubmitIdea';
+  Description,
+  Text
+} from './StyledSubmitIdeaForm';
 
 
 function SubmitIdeaForm() {
@@ -52,57 +52,76 @@ function SubmitIdeaForm() {
 
 
   const submitHandler = async e => {
-
     e.preventDefault();
-    setSending(true)
-    // i don't think we need the date stuff?
-    // get request of test posts still have a date
-    // let currentTime =  new Date().toLocaleDateString('en-US');
-    // this.setState({timeStamp: currentTime});
 
-    var state = {
-      ideaName: ideaName,
-      tagline: tagline,
-      description: description,
-      targetAudience: targetAudience,
-      hourCommitmentMin: hourCommitmentMin,
-      hourCommitmentMax: hourCommitmentMax,
-      skills: skills,
-      openPositions: openPositions,
-      author: author,
-      difficultyLevel: difficultyLevel,
-      discord: discord,
-      email: email,
-      calendly: calendly,
-      features: features,
-      experience: experience,
-    }
+    const confirmBox = window.confirm(
+      "After submission, the idea cannot be edited. Confirm sending?"
+    )
 
-
-    const res = await axios.post(`${env().STRAPI_URL}/idea-cards/`, state)
-
-    if (res.status === 200 ) {
-
-      setIdeaId(res.data.id);
-      setIdeaName('');
-      setTargetAudience('');
-      setDescription('');
-      setTagline('');
-      setSelected('submited');
-      setDiscord('');
-      setEmail('');
-      setCalendly('');
-      setFeatures('');
-      setExperience('')
+    if(confirmBox === false){
       setSending(false)
     }
 
-    else {
-      alert("Unable to register your idea.")
-      setSending(false)
+
+
+    if (confirmBox === true) {
+      
+
+      setSending(true)
+      // i don't think we need the date stuff?
+      // get request of test posts still have a date
+      // let currentTime =  new Date().toLocaleDateString('en-US');
+      // this.setState({timeStamp: currentTime});
+  
+      var state = {
+        ideaName: ideaName,
+        tagline: tagline,
+        description: description,
+        targetAudience: targetAudience,
+        hourCommitmentMin: hourCommitmentMin,
+        hourCommitmentMax: hourCommitmentMax,
+        skills: skills,
+        openPositions: openPositions,
+        author: author,
+        difficultyLevel: difficultyLevel,
+        discord: discord,
+        email: email,
+        calendly: calendly,
+        features: features,
+        experience: experience,
+      }
+  
+  
+      const res = await axios.post(`${env().STRAPI_URL}/idea-cards/`, state)
+  
+      if (res.status === 200 ) {
+  
+        setIdeaId(res.data.id);
+        setIdeaName('');
+        setTargetAudience('');
+        setDescription('');
+        setTagline('');
+        setSelected('submited');
+        setDiscord('');
+        setEmail('');
+        setCalendly('');
+        setFeatures('');
+        setExperience('')
+        setSending(false)
+      }
+  
+      else {
+        alert("Unable to register your idea.")
+        setSending(false)
+      }
+  
+    };
+
+
     }
 
-  };
+
+
 
 
   // const handleClick = (e, n) => {
@@ -166,8 +185,10 @@ function SubmitIdeaForm() {
               <p>Anything else you want to share with us?</p>
               <input type='text' name='tagline' value={tagline} onChange={(e) => setTagline(e.target.value)} />
             </Question2>
-            <p className="text">After submitting your idea will be reviewed and enter the
-workshopping stage !</p>
+            <Text>
+            After submitting your idea will be reviewed and enter the
+            workshopping stage!
+            </Text>
             <Submit type="submit"> {sending === true ? "Wait" : "Submit"} </Submit>
           </form>
         </Container>

@@ -1,5 +1,19 @@
 import axios from "axios"
 
+import Grid from '@mui/material/Grid';
+
+
+import {
+  UserNameCommentBox,
+  UserNameComment,
+  UserComment,
+  ButtonBox,
+  SideButtonBox,
+  FormBox
+} from './StyledCommentForm';
+
+
+
 function CommentForm(props) {
 
   const {selectedCard, ...other} = props;
@@ -25,24 +39,38 @@ function CommentForm(props) {
         }
       })
   }
-// move to WorkshoppingPage
+
   return (
-    <div >
-      <form onSubmit={handleSubmit} className="form_box">
-      <div className="user_name_comment_box">
-          <input
-            className="user_name_comment"
-            type="text"
-            name="author"
-            placeholder="Your name..."
-            value={props.handleChange}
-            onChange={handleChange}
+    <FormBox>
+      <form onSubmit={handleSubmit} >
+      <Grid container 
+        spacing={2} 
+        direction="row"
+        justifyContent="flex-start"
+        alignItems="flex-start" 
+      >
+        <Grid item xs={12} sm={12} md={12} lg={12} xl={12} >
+        <UserNameCommentBox>
+          <UserNameComment 
+          type="text"
+          name="author"
+          placeholder="Your name..."
+          value={props.handleChange}
+          onChange={handleChange}      
           />
-      </div>
+        </UserNameCommentBox>
+        </Grid>
 
+        <Grid item xs={12} sm={12} md={12} lg={12} xl={12} >
+        <UserComment>
 
-      <div className="user_comment">
-          <img alt="user_image" className="userImageOne" src={`https://picsum.photos/70?random=${props.id}`} />
+          <img alt="user_image" src={`https://picsum.photos/70?random=${props.id}`} 
+              style={{
+                marginLeft: "20px",
+                height: "60px",
+                borderRadius: "50%"
+              }}/>
+
           <input
             type="text"
             name="text"
@@ -50,17 +78,27 @@ function CommentForm(props) {
             value={props.handleTextChange}
             onChange={handleTextChange}
           />
-      </div>
-      <div className="button_box" >
-      <button type="submit">Submit</button>
-      </div>
-      <div className="side_button_box">
 
-      </div>
+        </UserComment>
 
+        </Grid>
+        <Grid item xs={12} sm={12} md={12} lg={12} xl={12}>
+          <ButtonBox>
+            <button type="submit">Submit</button>
+          </ButtonBox>
+      
+      
+     
+        </Grid>
+
+      </Grid>
+
+
+
+      
 
       </form>
-    </div>
+    </FormBox>
   );
 }
 

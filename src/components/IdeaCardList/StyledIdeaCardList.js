@@ -1,6 +1,11 @@
 import styled from "styled-components";
 
-const CardsWrapper = styled.ul`
+export const  CardListBackground = styled.section`
+  background-color: #30363E;
+  padding: 58px 0 21px 0;
+`
+
+export const  CardsWrapper = styled.ul`
   display: flex;
   flex-wrap: wrap;
   list-style: none;
@@ -13,4 +18,4 @@ const CardsWrapper = styled.ul`
   gap:10px;
 `
 
-export default CardsWrapper;
+

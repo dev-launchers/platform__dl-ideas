@@ -9,7 +9,7 @@ import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
 import CircularIndeterminateLoader from '../Loader/CircularIndeterminateLoader'
 import Grid from '@mui/material/Grid';
-import Container from '@mui/material/Container';
+import Grid from '@mui/material/Container';
 
 import {
   PageBackground,
@@ -25,6 +25,8 @@ import {
 } from './StyledWorkshoppingPage';
 
 
+
+import './comments.css';
 import axios from 'axios';
 
 function WorkshoppingPage(props) {
@@ -65,27 +67,48 @@ function WorkshoppingPage(props) {
   return (
 
 
-    <PageBackground>
-      <Container>
+    <Container>
       <Grid container 
         spacing={2} 
-        direction="row"
-        justifyContent="center"
-        alignItems="flex-start" 
+        direction="column"
+        justifyContent="flex-start"
+        alignItems="center" 
       >
       
-        <Grid item xs={12} sm={12} md={8} lg={8} xl={8} >
-        
-          {loading === true ? 
-            <CircularIndeterminateLoader 
-              text="Loading..."
-              color="white"
-            />
-            : 
-            ""
-          }
+        <Grid item xs={12} sm={12} md={6} lg={6} xl={6} >
+        </Grid>
+      </Grid>
+    </Container>
 
-          <Idea>
+
+
+    // <div className="container">
+
+
+
+<PageBackground>
+
+
+
+  <Grid container 
+    spacing={2} 
+    direction="column"
+    justifyContent="flex-start"
+    alignItems="center" 
+  >
+    <Grid item xs={12} sm={12} md={6} lg={6} xl={6} >
+      <div >
+
+        {loading === true ? 
+          <CircularIndeterminateLoader 
+            text="Loading..."
+            color="white"
+          />
+          : 
+          ""
+        }
+
+        <Idea>
           <IdeaName>
             <h2>{data.ideaName}</h2>
               <p>{data.tagline}</p>
@@ -129,21 +152,44 @@ function WorkshoppingPage(props) {
           <Comments>
             <CommentList data={data} selectedCard={data} />
           </Comments>
+        </div>
 
-
-
-        </Grid>
-        <Grid item xs={12} sm={12} md={4} lg={4} xl={4} align="left">
-        <LeaderInfo selectedCard={data} />
-      
-      
-        </Grid>
       </Grid>
-      </Container>
-      </PageBackground>
+
+  <Grid item xs={12} sm={12} md={6} lg={6} xl={6}  align="left">
+    <LeaderInfo selectedCard={data} />
+  </Grid>
+
+
+</Grid>
 
 
 
+        
+
+
+
+
+
+          {/* <div>
+            <IdeaOverview selectedCard={data} />
+          </div> */}
+
+
+    
+         
+
+
+
+
+
+
+
+
+          {/* <div className="form"> */}
+
+
+        </PageBackground>
   );
 }
 
