@@ -2,15 +2,29 @@ import React, { useState, useEffect } from 'react';
 import { useLocation } from 'react-router-dom'
 import CommentList from './DisplayComments';
 import CommentForm from './CommentForm';
-import IdeaOverview from './IdeaOverview';
 import LeaderInfo from './LeaderInfo';
 import { env } from '../../utils/EnvironmentVariables';
 import CircularProgress from '@mui/material/CircularProgress';
 import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
 import CircularIndeterminateLoader from '../Loader/CircularIndeterminateLoader'
+import Grid from '@mui/material/Grid';
+import Container from '@mui/material/Container';
 
-import './comments.css';
+import {
+  PageBackground,
+  FormWrap,
+  Comments,
+  IdeaDescription,
+  WorkshopCircule,
+  WorkshopCompleted,
+  WorkshopProgressBar,
+  IdeaProgress,
+  IdeaName,
+  Idea,
+} from './StyledWorkshoppingPage';
+
+
 import axios from 'axios';
 
 function WorkshoppingPage(props) {
@@ -51,43 +65,84 @@ function WorkshoppingPage(props) {
   return (
 
 
+    <PageBackground>
+      <Container>
+      <Grid container 
+        spacing={2} 
+        direction="row"
+        justifyContent="center"
+        alignItems="flex-start" 
+      >
+      
+        <Grid item xs={12} sm={12} md={8} lg={8} xl={8} >
+        
+          {loading === true ? 
+            <CircularIndeterminateLoader 
+              text="Loading..."
+              color="white"
+            />
+            : 
+            ""
+          }
 
-
-    <div className="container">
-        <div >
-
-        {loading === true ? 
-          <CircularIndeterminateLoader 
-            text="Loading..."
-            color="white"
-          />
-          : 
-          ""
-        }
-
-
-
-
-          <div>
-            <IdeaOverview selectedCard={data} />
-          </div>
-
-          <div className="form">
+          <Idea>
+          <IdeaName>
+            <h2>{data.ideaName}</h2>
+              <p>{data.tagline}</p>
+                <IdeaProgress>
+                  <WorkshopProgressBar>
+                    <WorkshopCircule> 
+                      <WorkshopCompleted />  
+                        <p>Idea Form</p>
+                      </WorkshopCircule>
+                      <WorkshopCircule> 
+                      <WorkshopCompleted />
+                        <p>Review</p>
+                      </WorkshopCircule>
+                      <WorkshopCircule> 
+                      <WorkshopCompleted />
+                        <p>Workshopping</p>
+                      </WorkshopCircule>
+                      <WorkshopCircule> 
+                      <WorkshopCompleted />
+                        <p>Recruitment</p>
+                      </WorkshopCircule>
+                      <WorkshopCircule> 
+                      <WorkshopCompleted />
+                        <p>Project</p>
+                      </WorkshopCircule>      
+                    </WorkshopProgressBar>
+                  </IdeaProgress>
+                </IdeaName>
+                <IdeaDescription>
+                  <h4>Description</h4>
+                  <p>{data.description}</p>
+                </IdeaDescription>
+              </Idea>
+              <FormWrap>
+            
             <CommentForm setHandleChange={setHandleChange} data={data} setData={setData} handleChange={handleChange} setHandleTextChange={setHandleTextChange} handleTextChange={handleTextChange} selectedCard={data} />
-          </div>
+            
+            </FormWrap>
+          {/* </div> */}
 
-          <div className="comments">
+          <Comments>
             <CommentList data={data} selectedCard={data} />
-          </div>
-        </div>
+          </Comments>
 
-        <div>
-          <div>
-            <LeaderInfo selectedCard={data} />
-          </div>
-        </div>
-      </div>
-    // </div>
+
+
+        </Grid>
+        <Grid item xs={12} sm={12} md={4} lg={4} xl={4} align="left">
+        <LeaderInfo selectedCard={data} />
+      
+      
+        </Grid>
+      </Grid>
+      </Container>
+      </PageBackground>
+
+
 
   );
 }
