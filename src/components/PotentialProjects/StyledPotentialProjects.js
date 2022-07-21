@@ -18,4 +18,10 @@ export const  CardsWrapper = styled.ul`
   gap:10px;
 `
 
+export const  LoaderWrapper = styled.div`
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+`
 

@@ -4,12 +4,12 @@ import { Route, Switch, HashRouter } from 'react-router-dom';
 import { ThemeProvider } from "styled-components";
 import GlobalStyle from "./styles/globals";
 import SubmitIdeaForm from './components/SubmiteIdeaForm/SubmitIdeaForm';
-import WelcomePage from './components/welcomepage.js';
+import WelcomePage from './components/WelcomePage/Welcomepage';
 import WorkshoppingPage from './components/WorkshoppingPage/WorkshoppingPage.js';
 import Nav from './components/Nav/nav';
 import SubmitForm from './components/submitform';
 import React, { useState } from 'react';
-import IdeaCardList from "./components/IdeaCardList/IdeaCardList"
+import PotentialProjects from "./components/PotentialProjects/PotentialProjects"
 import Header from "./components/common/Header";
 import RainbowBar from "./components/common/RainbowBar";
 
@@ -46,7 +46,7 @@ export default function App() {
               <SubmitForm />
             </Route>
             <Route exact path="/cards">
-              <IdeaCardList/>
+              <PotentialProjects/>
             </Route>
             <Route exact path="/workshopping/:id">
               <WorkshoppingPage ideaName={selectedCard.ideaName} selectedCard={selectedCard} />

@@ -1,12 +1,12 @@
 import React from 'react'
 import CircularIndeterminateLoader from '../Loader/CircularIndeterminateLoader'
 import IdeaCard from '../IdeaCard/IdeaCard'
-import { CardListBackground, CardsWrapper } from './StyledIdeaCardList'
+import { CardListBackground, CardsWrapper, LoaderWrapper } from './StyledPotentialProjects'
 import axios from "axios";
 import { env } from "../../utils/EnvironmentVariables";
 
 
-function IdeaCardList() {
+function PotentialProjects() {
   const [cards, setCards] = React.useState([]);
   const [selectedCard, setSelectedCard] = React.useState({});
   const [loading, setLoading] = React.useState(true);
@@ -36,16 +36,21 @@ function IdeaCardList() {
               return <IdeaCard key={item.id} cards={item} setSelectedCard={setSelectedCard} />
             })}
           </CardsWrapper>
-            {loading === true ? 
+
+            {
+            loading === true ? 
+            <LoaderWrapper >
               <CircularIndeterminateLoader 
                 text="Loading..."
                 color="white"
               />
+            </LoaderWrapper>
               : 
               ""
             }
+
         </CardListBackground>
   )
 }
 
-export default IdeaCardList
+export default PotentialProjects
