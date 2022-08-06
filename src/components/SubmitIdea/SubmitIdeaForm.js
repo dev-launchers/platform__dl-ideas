@@ -1,9 +1,9 @@
-import React, { useState } from 'react';
-import axios from 'axios';
-import './submitIdea.css'
-import { Link } from 'react-router-dom';
+import React, { useState } from "react";
+import axios from "axios";
+import "./submitIdea.css";
+import { Link } from "react-router-dom";
 
-import { env } from '../../utils/EnvironmentVariables';
+import { env } from "../../utils/EnvironmentVariables";
 
 import {
   Wrapper,
@@ -13,48 +13,44 @@ import {
   Submit,
   Container,
   SubmitWrapper,
-  Description
-} from './styledSubmitIdea';
-
+  Description,
+  DevIdeasDescription,
+} from "./styledSubmitIdea";
 
 function SubmitIdeaForm() {
-
-  const [selected, setSelected] = useState('form');
+  const [selected, setSelected] = useState("form");
   const [sending, setSending] = useState(false);
 
-  const [ideaId, setIdeaId] = useState('');
-  const [ideaName, setIdeaName] = useState('');
-  const [tagline, setTagline] = useState('');
-  const [description, setDescription] = useState('');
-  const [targetAudience, setTargetAudience] = useState('');
+  const [ideaId, setIdeaId] = useState("");
+  const [ideaName, setIdeaName] = useState("");
+  const [tagline, setTagline] = useState("");
+  const [description, setDescription] = useState("");
+  const [targetAudience, setTargetAudience] = useState("");
   const [hourCommitmentMin, setHourCommitmentMin] = useState(0);
   const [hourCommitmentMax, setHourCommitmentMax] = useState(0);
   const [skills, setSkills] = useState([
-    { skill: 'Web Developer' },
-    { skill: 'AI / ML' },
+    { skill: "Web Developer" },
+    { skill: "AI / ML" },
   ]);
   const [openPositions, setOpenPositions] = useState([
     {
-      title: 'Developer, UX/UX',
-      description: 'Lots of programing',
-      isHidden: false
-    }
+      title: "Developer, UX/UX",
+      description: "Lots of programing",
+      isHidden: false,
+    },
   ]);
-  const [author, setAuthor] = useState('1');
-  const [difficultyLevel, setDifficultyLevel] = useState('Beginner');
-  const [discord, setDiscord] = useState('');
-  const [email, setEmail] = useState('');
-  const [calendly, setCalendly] = useState('');
-  const [features, setFeatures] = useState('');
-  const [experience, setExperience] = useState('');
+  const [author, setAuthor] = useState("1");
+  const [difficultyLevel, setDifficultyLevel] = useState("Beginner");
+  const [discord, setDiscord] = useState("");
+  const [email, setEmail] = useState("");
+  const [calendly, setCalendly] = useState("");
+  const [features, setFeatures] = useState("");
+  const [experience, setExperience] = useState("");
   //const [timeStamp, setTimeStamp] = useState(new Date());
 
-
-
-  const submitHandler = async e => {
-
+  const submitHandler = async (e) => {
     e.preventDefault();
-    setSending(true)
+    setSending(true);
     // i don't think we need the date stuff?
     // get request of test posts still have a date
     // let currentTime =  new Date().toLocaleDateString('en-US');
@@ -76,50 +72,45 @@ function SubmitIdeaForm() {
       calendly: calendly,
       features: features,
       experience: experience,
-    }
+    };
 
+    const res = await axios.post(`${env().STRAPI_URL}/idea-cards/`, state);
 
-    const res = await axios.post(`${env().STRAPI_URL}/idea-cards/`, state)
-
-    if (res.status === 200 ) {
-
+    if (res.status === 200) {
       setIdeaId(res.data.id);
-      setIdeaName('');
-      setTargetAudience('');
-      setDescription('');
-      setTagline('');
-      setSelected('submited');
-      setDiscord('');
-      setEmail('');
-      setCalendly('');
-      setFeatures('');
-      setExperience('')
-      setSending(false)
+      setIdeaName("");
+      setTargetAudience("");
+      setDescription("");
+      setTagline("");
+      setSelected("submited");
+      setDiscord("");
+      setEmail("");
+      setCalendly("");
+      setFeatures("");
+      setExperience("");
+      setSending(false);
+    } else {
+      alert("Unable to register your idea.");
+      setSending(false);
     }
-
-    else {
-      alert("Unable to register your idea.")
-      setSending(false)
-    }
-
   };
-
 
   // const handleClick = (e, n) => {
   // setHourCommitmentMax(e);
   //   setSelected(n)
   // }
 
-
-  if (selected === 'form') {
+  if (selected === "form") {
     return (
       <Wrapper>
         <Container>
           <Headline>Dev Ideas</Headline>
-          <Description>
-            Have an idea for a development project?<br />
-            Share your idea with us!<br />
-          </Description>
+          <DevIdeasDescription>
+            Have an idea for a development project?
+            <br />
+            Share your idea with us!
+            <br />
+          </DevIdeasDescription>
           <form onSubmit={submitHandler}>
             {/* <div className="test">
               <div className="progress_bar">
@@ -131,65 +122,155 @@ function SubmitIdeaForm() {
               </div>
             </div> */}
             <Question>
-              <p>Idea Name</p>
-              <input required type="text" name="ideaName" value={ideaName} onChange={(e) => setIdeaName(e.target.value)} />
+              <div>
+                <label for="ideaName">Idea Name</label>
+              </div>
+              <input
+                required
+                type="text"
+                id="ideaName"
+                name="ideaName"
+                value={ideaName}
+                onChange={(e) => setIdeaName(e.target.value)}
+              />
             </Question>
             <Question>
-              <p>Your Discord Name</p>
-              <input required type="text" name="discord" value={discord} onChange={(e) => setDiscord(e.target.value)} />
+              <div>
+                <label for="discord">Discord</label>
+              </div>
+              <input
+                required
+                type="text"
+                id="discord"
+                name="discord"
+                value={discord}
+                onChange={(e) => setDiscord(e.target.value)}
+              />
             </Question>
             <Question>
-              <p>Your Email</p>
-              <input required type="text" name="email" value={email} onChange={(e) => setEmail(e.target.value)} />
+              <div>
+                <label for="email">Your Email</label>
+              </div>
+              <input
+                required
+                type="text"
+                id="email"
+                name="email"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+              />
             </Question>
             <Question>
-              <p>Do you have a Calendly? If so add a link here, if not it’s okay!</p>
-              <input required type="text" name="calendly" value={calendly} onChange={(e) => setCalendly(e.target.value)} />
+              <div>
+                <label for="calendly">
+                  Do you have a Calendly? If so add a link here, if not it’s
+                  okay!
+                </label>
+              </div>
+              <input
+                type="text"
+                id="calendly"
+                name="calendly"
+                value={calendly}
+                onChange={(e) => setCalendly(e.target.value)}
+              />
             </Question>
             <Question2>
-              <p>What is your experience with development?</p>
-              <input type='text' name='experience' value={experience} onChange={(e) => setExperience(e.target.value)} />
+              <div>
+                <label for="experience">
+                  What is your experience with development?
+                </label>
+              </div>
+              <textarea
+                required
+                id="experience"
+                name="experience"
+                value={experience}
+                onChange={(e) => setExperience(e.target.value)}
+              />
             </Question2>
             <Question2>
-              <p>What is your idea?</p>
-              <input type='text' name='description' value={description} onChange={(e) => setDescription(e.target.value)} />
+              <div>
+                <label for="description">What is your idea?</label>
+              </div>
+              <textarea
+                required
+                id="description"
+                name="description"
+                value={description}
+                onChange={(e) => setDescription(e.target.value)}
+              />
             </Question2>
             <Question2>
-              <p>Why do you think your idea is helpful or would be fun?</p>
-              <input type='text' name='targetAudience' value={targetAudience} onChange={(e) => setTargetAudience(e.target.value)} />
+              <div>
+                <label for="targetAudience">
+                  Why do you think your idea is helpful or would be fun?
+                </label>
+              </div>
+              <textarea
+                required
+                id="targetAudience"
+                name="targetAudience"
+                value={targetAudience}
+                onChange={(e) => setTargetAudience(e.target.value)}
+              />
             </Question2>
             <Question2>
-              <p>What features would your idea have?</p>
-              <input type='text' name='features' value={features} onChange={(e) => setFeatures(e.target.value)} />
+              <div>
+                <label for="features">
+                  What features would your idea have?
+                </label>
+              </div>
+              <textarea
+                required
+                id="features"
+                name="features"
+                value={features}
+                onChange={(e) => setFeatures(e.target.value)}
+              />
             </Question2>
             <Question2>
-              <p>Anything else you want to share with us?</p>
-              <input type='text' name='tagline' value={tagline} onChange={(e) => setTagline(e.target.value)} />
+              <div>
+                <label for="tagline">
+                  Anything else you want to share with us?
+                </label>
+              </div>
+              <textarea
+                id="tagline"
+                name="tagline"
+                value={tagline}
+                onChange={(e) => setTagline(e.target.value)}
+              />
             </Question2>
-            <p className="text">After submitting your idea will be reviewed and enter the
-workshopping stage !</p>
-            <Submit type="submit"> {sending === true ? "Wait" : "Submit"} </Submit>
+            <p className="text">
+              After submitting your idea will be reviewed and enter the
+              workshopping stage !
+            </p>
+            <Submit type="submit">
+              {" "}
+              {sending === true ? "Wait" : "Submit"}{" "}
+            </Submit>
           </form>
         </Container>
       </Wrapper>
-    )
+    );
   }
 
-
-  if (selected === 'submited') {
+  if (selected === "submited") {
     return (
       <Wrapper>
         <SubmitWrapper>
-          <p>Thank you for submitting your idea!
-            Next your idea will move on to the workshopping phase. </p>
-            <Link to={`/workshopping/${ideaId}`} >
-              <button>Next</button>
-            </Link>
+          <p>
+            Thank you for submitting your idea! Next your idea will move on to
+            the workshopping phase.{" "}
+          </p>
+          <Link to={`/workshopping/${ideaId}`}>
+            <button>Next</button>
+          </Link>
         </SubmitWrapper>
       </Wrapper>
-    )
+    );
   }
-
 }
 
 export default SubmitIdeaForm;

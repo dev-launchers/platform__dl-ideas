@@ -1,24 +1,22 @@
-import styled from 'styled-components';
+import styled from "styled-components";
 import { Link } from "react-router-dom";
 
-
-
 export const Wrapper = styled.div`
-  background-color: #30363E;
+  background-color: #30363e;
   border-radius: 40px;
   width: 80%;
-  max-width:800px;
+  max-width: 800px;
   margin: 0 auto;
   display: flex;
   justify-content: center;
   align-items: center;
-  padding:20px
+  padding: 20px;
 `;
 
 export const Headline = styled.h3`
   font-size: 40px;
-  color: #D3D4D6;
-  margin-top:40px;
+  color: #d3d4d6;
+  margin-top: 40px;
 `;
 
 export const Test = styled.div`
@@ -34,8 +32,8 @@ export const ButtonArea = styled.div`
   flex-direction: row;
   justify-content: space-around;
   align-items: flex-start;
-  margin-left:auto;
-  margin-right:auto;
+  margin-left: auto;
+  margin-right: auto;
 
   @media (orientation: portrait) {
     flex-direction: column;
@@ -58,30 +56,29 @@ export const StyledLink = styled(Link)`
 
 export const Button = styled.button`
   width: 100%;
-  height: 100%;display:flex;
+  height: 100%;
+  display: flex;
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
 
-	/* background: #C4C4C4; */
-	/* font-weight: bold; */
-	color: ${({ theme }) => theme.colors.NEUTRAL_2};
-	border: 0 none;
-	border-radius: 30px;
-	cursor: pointer;
-	padding: 2rem;
+  /* background: #C4C4C4; */
+  /* font-weight: bold; */
+  color: ${({ theme }) => theme.colors.NEUTRAL_2};
+  border: 0 none;
+  border-radius: 30px;
+  cursor: pointer;
+  padding: 2rem;
   margin: 10px 5px;
-  font-size:2rem;
+  font-size: 2rem;
   font-family: "Abel";
   background-color: ${({ theme }) => theme.colors.NEUTRAL_1};
 
   @media (orientation: portrait) {
-    font-size:1.5rem;
+    font-size: 1.5rem;
     flex-direction: column;
   }
 `;
-
-
 
 export const Description = styled.p`
   /* color: #F1F4F5; */
@@ -89,19 +86,25 @@ export const Description = styled.p`
   text-align: center;
 `;
 
+export const DevIdeasDescription = styled.p`
+  /* color: #FFFFFF; */
+  color: white;
+  text-align: center;
+`;
+
 export const Question = styled.div`
   margin-left: 10px;
 
-  & p {
-   display: inline-block;
-   color: #ffffff;
-   font-size: 15px;
-   text-align: left ;
-   float: left;
-   width: 90%;
-   margin-top: 5px;
-   margin-bottom: 5px;
-   margin-left: 10px;
+  & label {
+    display: inline-block;
+    color: #ffffff;
+    font-size: 15px;
+    text-align: left;
+    float: left;
+    width: 90%;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    margin-left: 10px;
   }
   & input {
     display: inline-block;
@@ -115,18 +118,16 @@ export const Question = styled.div`
 `;
 
 export const Question2 = styled.div`
-
-
-  & p {
-   display: inline-block;
-   color: #ffffff;
-   font-size: 15px;
-   text-align: left ;
-   float: left;
-   width: 90%;
-   margin-top: 30px;
-   margin-bottom: 5px;
-   margin-left: 20px;
+  & label {
+    display: inline-block;
+    color: #ffffff;
+    font-size: 15px;
+    text-align: left;
+    float: left;
+    width: 90%;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    margin-left: 20px;
   }
   & input {
     display: inline-block;
@@ -135,7 +136,17 @@ export const Question2 = styled.div`
     height: 100px;
     background-color: #c4c4c4;
     border: none;
-    border-radius: 20px;
+    border-radius: 5px;
+    margin-left: 10px;
+  }
+  & textarea {
+    display: inline-block;
+    float: left;
+    width: 90%;
+    height: 100px;
+    background-color: #c4c4c4;
+    border: none;
+    border-radius: 5px;
     margin-left: 10px;
   }
 `;
@@ -144,12 +155,11 @@ export const LastQuestion = styled.div`
   clear: both;
 
   & p {
-   display: inline-block;
-   color: #ffffff;
-   font-size: 20px;
-   text-align: left ;
-   float: right;
-
+    display: inline-block;
+    color: #ffffff;
+    font-size: 20px;
+    text-align: left;
+    float: right;
   }
   & input {
     display: inline-block;
@@ -164,17 +174,17 @@ export const LastQuestion = styled.div`
 
 export const Submit = styled.button`
   width: 130px;
-	background: #C4C4C4;
-	font-weight: bold;
-	color: #000000;
-	border: 0 none;
-	border-radius: 15px;
-	cursor: pointer;
-	padding: 7px 5px;
+  background: #c4c4c4;
+  font-weight: bold;
+  color: #000000;
+  border: 0 none;
+  border-radius: 15px;
+  cursor: pointer;
+  padding: 7px 5px;
   margin-top: 80px;
   margin-bottom: 20px;
   margin-right: 20px;
-  font-size:20px;
+  font-size: 20px;
   float: right;
 `;
 
@@ -185,11 +195,11 @@ export const Container = styled.div`
 `;
 
 export const SubmitWrapper = styled.div`
-  background-color: #C9CACC;
+  background-color: #c9cacc;
   height: auto;
   border-radius: 30px;
   width: 90%;
-  max-width:500px; 
+  max-width: 500px;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -198,22 +208,22 @@ export const SubmitWrapper = styled.div`
   & p {
     font-size: 2.2rem;
     font-weight: bold;
-    padding: 0 15% 0 15%; 
+    padding: 0 15% 0 15%;
     @media screen and (max-width: 600px) {
       font-size: 1.6rem;
     }
   }
-  
+
   & button {
-   width: 200px;
-   margin: 0 auto;
-   background: #89969F;
-	 font-weight: bold;
-	 color: #000000;
-	 border: 0 none;
-	 border-radius: 30px;
-	 cursor: pointer;
-	 padding: 10px 5px;
-   font-size:20px;
-    }
-  `;
+    width: 200px;
+    margin: 0 auto;
+    background: #89969f;
+    font-weight: bold;
+    color: #000000;
+    border: 0 none;
+    border-radius: 30px;
+    cursor: pointer;
+    padding: 10px 5px;
+    font-size: 20px;
+  }
+`;
