@@ -43,6 +43,9 @@ function IdeaCard({ cards, setSelectedCard }) {
 
 
 
+
+
+
   return (
     <CardWrapper>
       <AddIconLight />
