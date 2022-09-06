@@ -1,5 +1,11 @@
 
-import './comments.css';
+import {
+  Leader,
+  LeaderInfo,
+  LeaderName,
+  LeaderImage
+} from './StyledComments.js';
+
 
 
 function formatDate(string){
@@ -8,28 +14,26 @@ function formatDate(string){
 }
 
 
-function LeaderInfo(props) {
+function LeaderInfoComponent(props) {
 
   const {selectedCard, ...other} = props;
 
   return (
-    <div className="leader">
-
-
-        <div className="leader_info" align="right" >
-          <div className="leader_name" align="right">
-            <img alt="user_image" className="leader_image" src={`https://picsum.photos/70?random=${props.id}`} />
+    <Leader>
+        <LeaderInfo>
+          <LeaderName align="right">
+            <LeaderImage alt="user_image" src={`https://picsum.photos/70?random=${props.id}`} />
             {props.selectedCard.discord}
-          </div>
+          </LeaderName>
         <h6>
-        <p>Submitted: {formatDate(props.selectedCard.created_at)}</p>
-        <p>Contact</p>
+          <p>Submitted: {formatDate(props.selectedCard.created_at)}</p>
+          <p>Contact</p>
           <p>email: {props.selectedCard.email}</p>
           <p>discord: {props.selectedCard.discord}</p>
         </h6>
-      </div>
-    </div>
+      </LeaderInfo>
+    </Leader>
   )
 }
 
-export default LeaderInfo;
+export default LeaderInfoComponent;

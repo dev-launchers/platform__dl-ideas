@@ -10,8 +10,13 @@ import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
 import CircularIndeterminateLoader from '../Loader/CircularIndeterminateLoader'
 
-import './comments.css';
 import axios from 'axios';
+
+import {
+  Container,
+  Form,
+  Comments
+} from './StyledComments.js';
 
 function WorkshoppingPage(props) {
   const [data, setData] = useState(
@@ -49,11 +54,7 @@ function WorkshoppingPage(props) {
 
 
   return (
-
-
-
-
-    <div className="container">
+      <Container>
         <div >
 
         {loading === true ? 
@@ -72,13 +73,13 @@ function WorkshoppingPage(props) {
             <IdeaOverview selectedCard={data} />
           </div>
 
-          <div className="form">
+          <Form>
             <CommentForm setHandleChange={setHandleChange} data={data} setData={setData} handleChange={handleChange} setHandleTextChange={setHandleTextChange} handleTextChange={handleTextChange} selectedCard={data} />
-          </div>
+          </Form>
 
-          <div className="comments">
+          <Comments>
             <CommentList data={data} selectedCard={data} />
-          </div>
+          </Comments>
         </div>
 
         <div>
@@ -86,9 +87,7 @@ function WorkshoppingPage(props) {
             <LeaderInfo selectedCard={data} />
           </div>
         </div>
-      </div>
-    // </div>
-
+      </Container>
   );
 }
 

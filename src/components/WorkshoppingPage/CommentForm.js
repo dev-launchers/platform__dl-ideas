@@ -1,48 +1,56 @@
-import axios from "axios"
+import axios from "axios";
+import {
+  UserNameCommentBox,
+  UserNameComment,
+  UserComment,
+  UserImageOne,
+} from "./StyledComments.js";
 
 function CommentForm(props) {
-
-  const {selectedCard, ...other} = props;
+  const { selectedCard, ...other } = props;
 
   const handleChange = (e) => {
-    props.setHandleChange(e.target.value)
-  }
+    props.setHandleChange(e.target.value);
+  };
 
   const handleTextChange = (e) => {
-    props.setHandleTextChange(e.target.value)
-  }
+    props.setHandleTextChange(e.target.value);
+  };
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    var data = { author: props.handleChange, text: props.handleTextChange }
+    var data = { author: props.handleChange, text: props.handleTextChange };
 
-    axios.post(`https://api-staging.devlaunchers.org/idea-cards/${props.selectedCard.id}/comment`, data)
-      .then(response => {
-        
-        if (response.status === 200 ) {
-          props.setHandleChange('')
-          props.setHandleTextChange('')
+    axios
+      .post(
+        `https://api-staging.devlaunchers.org/idea-cards/${props.selectedCard.id}/comment`,
+        data
+      )
+      .then((response) => {
+        if (response.status === 200) {
+          props.setHandleChange("");
+          props.setHandleTextChange("");
         }
-      })
-  }
-// move to WorkshoppingPage
+      });
+  };
+  // move to WorkshoppingPage
   return (
-    <div >
-      <form onSubmit={handleSubmit} className="form_box">
-      <div className="user_name_comment_box">
-          <input
-            className="user_name_comment"
+    <div>
+      <form onSubmit={handleSubmit}>
+        <UserNameCommentBox>
+          <UserNameComment
             type="text"
             name="author"
             placeholder="Your name..."
             value={props.handleChange}
             onChange={handleChange}
           />
-      </div>
-
-
-      <div className="user_comment">
-          <img alt="user_image" className="userImageOne" src={`https://picsum.photos/70?random=${props.id}`} />
+        </UserNameCommentBox>
+        <UserComment>
+          <UserImageOne
+            alt="user_image"
+            src={`https://picsum.photos/70?random=${props.id}`}
+          />
           <input
             type="text"
             name="text"
@@ -50,15 +58,8 @@ function CommentForm(props) {
             value={props.handleTextChange}
             onChange={handleTextChange}
           />
-      </div>
-      <div className="button_box" >
-      <button type="submit">Submit</button>
-      </div>
-      <div className="side_button_box">
-
-      </div>
-
-
+        </UserComment>
+        <button type="submit">Submit</button>
       </form>
     </div>
   );

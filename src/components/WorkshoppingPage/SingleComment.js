@@ -1,15 +1,24 @@
-const SingleComment = props => (
-  <div className="singleComment">
-    <img alt="user_image" className="userImage" src={`https://picsum.photos/70?random=${props.id}`} />
+
+import {
+  SingleComment,
+  UserImage,
+  TextContent,
+  SingleCommentContent,
+  SingleCommentButtons
+} from './StyledComments.js';
+
+const SingleCommentComponent = props => (
+  <SingleComment>
+    <UserImage alt="user_image" src={`https://picsum.photos/70?random=${props.id}`} />
     <div className="textContent">
-      <div className="singleCommentContent">
+      <SingleCommentContent>
         <h3>{props.author}</h3>
         <div source={props.children} ><p>{props.children}</p></div>
-      </div>
-      <div className="singleCommentButtons">
-      </div>
+      </SingleCommentContent>
+      <SingleCommentButtons>
+      </SingleCommentButtons>
     </div>
-  </div>
+  </SingleComment>
 );
 
-export default SingleComment;
+export default SingleCommentComponent;
