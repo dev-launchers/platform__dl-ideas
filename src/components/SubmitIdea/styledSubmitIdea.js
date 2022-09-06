@@ -82,6 +82,7 @@ export const Headline = styled.h3`
   padding-top: 2rem;
 `;
 
+
 export const Description = styled.p`
   /* color: #F1F4F5; */
   color: black;
@@ -195,11 +196,12 @@ export const SubmitWrapper = styled.div`
     font-size: 2.2rem;
     font-weight: bold;
     padding: 0 15% 0 15%;
+
     @media screen and (max-width: 600px) {
       font-size: 1.6rem;
     }
   }
-
+  
   & button {
     width: 200px;
     margin: 0 auto;
