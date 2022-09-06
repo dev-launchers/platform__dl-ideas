@@ -171,7 +171,7 @@ export const Idea = styled.div`
   width: 100%;
   max-width: 700px;
   min-width: 300px;
-  height: 280px;
+  // height: 280px;
   border-radius: 30px;
   text-align: left;
 
@@ -193,6 +193,7 @@ export const IdeaName = styled.div`
   border-top-right-radius: 30px;
   border-top-left-radius: 30px;
   padding-left: 20px;
+  padding-bottom: 0.1rem;
   color: white;
 `;
 
@@ -210,7 +211,7 @@ export const Description = styled.div`
   background-color: white;
   border: .2rem solid ${({ theme }) => theme.colors.NEUTRAL_1};
   width: 100%;
-  height: 50%;
+  // height: 50%;
   border-bottom-right-radius: 30px;
   border-bottom-left-radius: 30px;
   padding-left: 20px;
