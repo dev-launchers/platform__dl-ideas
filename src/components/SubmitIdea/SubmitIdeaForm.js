@@ -181,48 +181,98 @@ function SubmitIdeaForm() {
               </Question>
               <Question2>
                 <p>What is your experience with development?</p>
-                <input
+                {/* <input
                   type="text"
                   name="experience"
                   value={experience}
                   onChange={(e) => setExperience(e.target.value)}
-                />
+                /> */}
+                <textarea
+                  onKeyUp={(e) => {
+                    e.target.style.height = 'inherit';
+                    e.target.style.height = `${e.target.scrollHeight}px`; 
+                  }}
+                  style={{width:"100%", overflow:"hidden"}}
+                  name="experience"
+                  value={experience}
+                  onChange={(e) => setExperience(e.target.value)}>
+                </textarea>
               </Question2>
               <Question2>
                 <p>What is your idea?</p>
-                <input
+                {/* <input
                   type="text"
                   name="description"
                   value={description}
                   onChange={(e) => setDescription(e.target.value)}
-                />
+                /> */}
+                <textarea
+                  onKeyUp={(e) => {
+                    e.target.style.height = 'inherit';
+                    e.target.style.height = `${e.target.scrollHeight}px`; 
+                  }}
+                  style={{width:"100%", overflow:"hidden"}}
+                  name="description"
+                  value={description}
+                  onChange={(e) => setDescription(e.target.value)}>
+                </textarea>
               </Question2>
               <Question2>
                 <p>Why do you think your idea is helpful or would be fun?</p>
-                <input
+                {/* <input
                   type="text"
                   name="targetAudience"
                   value={targetAudience}
                   onChange={(e) => setTargetAudience(e.target.value)}
-                />
+                /> */}
+                <textarea
+                  onKeyUp={(e) => {
+                    e.target.style.height = 'inherit';
+                    e.target.style.height = `${e.target.scrollHeight}px`; 
+                  }}
+                  style={{width:"100%", overflow:"hidden"}}
+                  name="targetAudience"
+                  value={targetAudience}
+                  onChange={(e) => setTargetAudience(e.target.value)}>
+                </textarea>
               </Question2>
               <Question2>
                 <p>What features would your idea have?</p>
-                <input
+                {/* <input
                   type="text"
                   name="features"
                   value={features}
                   onChange={(e) => setFeatures(e.target.value)}
-                />
+                /> */}
+                <textarea
+                  onKeyUp={(e) => {
+                    e.target.style.height = 'inherit';
+                    e.target.style.height = `${e.target.scrollHeight}px`; 
+                  }}
+                  style={{width:"100%", overflow:"hidden"}}
+                  name="features"
+                  value={features}
+                  onChange={(e) => setFeatures(e.target.value)}>
+                </textarea>
               </Question2>
               <Question2>
-                <p>Anything else you want to share with us?</p>
-                <input
+                <p>Do you have a catchy tagline for this idea submission?</p>
+                {/* <input
                   type="text"
                   name="tagline"
                   value={tagline}
                   onChange={(e) => setTagline(e.target.value)}
-                />
+                /> */}
+                <textarea
+                  onKeyUp={(e) => {
+                    e.target.style.height = 'inherit';
+                    e.target.style.height = `${e.target.scrollHeight}px`; 
+                  }}
+                  style={{width:"100%", overflow:"hidden"}}
+                  name="tagline"
+                  value={tagline}
+                  onChange={(e) => setTagline(e.target.value)}>
+                </textarea>
               </Question2>
               <p className="text">
                 After submitting your idea will be reviewed and enter the
