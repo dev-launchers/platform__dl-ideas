@@ -1,4 +1,5 @@
 
+import ReactMarkdown from "react-markdown";
 import {
   Idea,
   IdeaName,
@@ -32,7 +33,7 @@ function IdeaOverview(props) {
       </IdeaName>
       <Description>
         <h4>Description</h4>
-        <p>{props.selectedCard.description}</p>
+        <p><ReactMarkdown parserOptions={{commonmark:true}}>{props.selectedCard.description.replaceAll('\n', '  \n')}</ReactMarkdown></p>
       </Description>
     </Idea>
   )

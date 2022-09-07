@@ -7,11 +7,13 @@ function DisplayComments(props) {
   const [data, setData] = useState([])
 
   useEffect(() => {
-    axios.get(`https://api-staging.devlaunchers.org/idea-cards/${props.selectedCard.id}/`)
-      .then(response => {
-        setData((response.data.comments).sort((a, b) => a.published_at < b.published_at ? 1 : -1))
-      })
-  })
+    if (props.selectedCard.id != undefined) {
+      axios.get(`https://api-staging.devlaunchers.org/idea-cards/${props.selectedCard.id}/`)
+        .then(response => {
+          setData((response.data.comments).sort((a, b) => a.published_at < b.published_at ? 1 : -1))
+        })
+    }
+  }, [props.selectedCard])
 
 
   const commentNodes = data.map(comment => (
