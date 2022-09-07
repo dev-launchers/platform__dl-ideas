@@ -39,7 +39,6 @@ function SubmitIdea() {
 
           <AppIdeaGeneratorButton style={{marginLeft:"auto", marginRight:"auto"}} />
 
-
           <ButtonArea>
             <StyledLink to="/form">
               <Button onClick={() => handleClick(1, 'PSI')}>

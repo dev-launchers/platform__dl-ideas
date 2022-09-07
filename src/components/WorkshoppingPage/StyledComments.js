@@ -224,6 +224,7 @@ export const Description = styled.div`
   border-bottom-left-radius: 30px;
   padding-left: 20px;
   padding-bottom:2rem;
+  overflow-wrap: break-word;
 `;
 
 
