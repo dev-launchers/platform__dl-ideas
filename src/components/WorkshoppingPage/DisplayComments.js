@@ -23,7 +23,7 @@ function DisplayComments(props) {
   ));
   return (
     <div>
-      {commentNodes}
+      {data.length ? commentNodes : <div style={{padding:"2rem"}}>No comments yet!</div>}
     </div>
   );
 };
