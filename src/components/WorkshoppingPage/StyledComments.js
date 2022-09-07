@@ -69,7 +69,6 @@ export const UserNameComment = styled.input`
   background-color: ${({ theme }) => theme.colors.NEUTRAL_1};
   border-radius: 25px;
   padding: 20px;
-
 `;
 
 
