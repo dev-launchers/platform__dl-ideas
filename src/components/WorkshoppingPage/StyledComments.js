@@ -174,6 +174,10 @@ export const Idea = styled.div`
   border-radius: 30px;
   text-align: left;
 
+  @media (orientation: portrait) {
+    width: 90vw;
+  }
+
   h2{
     padding-top: 10px;
     margin-bottom: 5px;
