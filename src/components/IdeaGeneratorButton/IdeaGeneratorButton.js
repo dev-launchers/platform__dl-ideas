@@ -5,7 +5,7 @@ import React from "react";
 
 import Modal from "../common/Modal";
 
-import { Wrapper } from "./StyledIdeaGeneratorButton";
+import { ButtonWrapper, ModalWrapper } from "./StyledIdeaGeneratorButton";
 
 export default function IdeaGeneratorButton(props) {
   // Modal state management
@@ -18,24 +18,9 @@ export default function IdeaGeneratorButton(props) {
     setModalIsOpen(false);
   };
 
-  const modalStyle = {
-    width: "100%",
-    height: "100%",
-    display: "flex",
-    flexDirection: "column",
-    justifyContent: "center",
-    alignItems: "center",
-    fontSize: "3rem",
-    lineHeight: "3rem",
-    backgroundColor: "rgb(255,255,255)",
-    fontWeight: "bold",
-    textAlign: "center",
-  };
   const openIdeaModal = async () => {
     setModalContent(
-      <div
-        style={modalStyle}
-      >
+      <ModalWrapper>
         <span style={{fontSize:"1.25em"}}>Loading...</span>
         <br />
         <br />
@@ -43,14 +28,12 @@ export default function IdeaGeneratorButton(props) {
         <br />
         <br />
         <span style={{fontSize:".5em"}}>Interested in how this works? This system combines the practice of "Prompt Engineering" with a "GPT Model" called GPT-J to generate pieces of text with specific areas of focus. Go check it out!</span>
-      </div>
+      </ModalWrapper>
     );
     openModal();
 
     setModalContent(
-      <div
-        style={modalStyle}
-      >
+      <ModalWrapper>
         <span style={{fontSize:".6em"}}>Your idea seed is ready! It will most likely need some tweaking and workshopping...</span>
         <br />
         {await props.contentGenerator()}
@@ -58,13 +41,13 @@ export default function IdeaGeneratorButton(props) {
         <span style={{fontSize:".35em"}}>NOTE: These ideas are generated using AI, and as such may contain biases or output unpredictable results at times. Take them with a large grain of salt!</span>
         <br />
         {generateButton({ position: "absolute", bottom: "10%" })}
-      </div>
+      </ModalWrapper>
     );
     openModal();
   };
 
   const generateButton = (styleObject) => (
-    <Wrapper style={styleObject}>
+    <ButtonWrapper style={styleObject}>
       <Modal
         modalContent={modalContent}
         modalIsOpen={modalIsOpen}
@@ -74,7 +57,7 @@ export default function IdeaGeneratorButton(props) {
       <div style={{ width: "100%", height: "100%" }} onClick={openIdeaModal}>
         {props.children}
       </div>
-    </Wrapper>
+    </ButtonWrapper>
   );
 
   return generateButton(props.style);
