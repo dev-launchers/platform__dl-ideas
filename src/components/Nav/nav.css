@@ -1,5 +1,6 @@
 .nav {
-  background-color: #30363E;
+  background-color: #1c1c1c;
+  color: white;
   height: 50px;
   display: flex;
   justify-content: left;

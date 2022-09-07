@@ -36,7 +36,7 @@ export default function App() {
         <HashRouter>
           <Header />
           <RainbowBar />
-          {/*}<Nav />{*/}
+          <Nav />
           <Switch>
             <Route exact path="/" component={WelcomePage} />
             <Route exact path="/form" component={SubmitIdeaForm}>
