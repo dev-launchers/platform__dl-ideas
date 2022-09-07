@@ -51,13 +51,18 @@ function CommentForm(props) {
             alt="user_image"
             src={`https://picsum.photos/70?random=${props.id}`}
           />
-          <input
-            type="text"
+          <textarea
+            onKeyUp={(e) => {
+              e.target.style.height = 'inherit';
+              e.target.style.height = `${e.target.scrollHeight}px`; 
+              // In case you have a limitation
+              // e.target.style.height = `${Math.min(e.target.scrollHeight, limit)}px`;
+            }}
+            style={{width:"100%", overflow:"hidden"}}
             name="text"
             placeholder="What are your thoughts?"
             value={props.handleTextChange}
-            onChange={handleTextChange}
-          />
+            onChange={handleTextChange}></textarea>
         </UserComment>
         <button type="submit">Submit</button>
       </form>
