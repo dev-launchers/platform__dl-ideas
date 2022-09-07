@@ -36,7 +36,7 @@ const phraseGenerator = async () => <div>{await fetchIdea(modelParameters)}</div
 export default function AppIdeaGeneratorButton({style}) {
   return (
     <IdeaGeneratorButton style={style} contentGenerator={phraseGenerator}>
-      💡 Generate An App Idea Using AI!
+      Generate An Idea!
     </IdeaGeneratorButton>
   );
 }
