@@ -11,6 +11,7 @@ export const Container = styled.div`
   align-items: top;
   justify-content: center;
   flex-wrap: wrap;
+  padding-bottom: 10vh;
 `;
 
 
@@ -42,6 +43,10 @@ export const SingleCommentContent = styled.div`
   border-radius: 25px;
   padding: 20px;
   display: inline-flex;
+
+  @media (orientation: portrait) {
+    min-width: auto;
+  }
 
   h3 {
     margin: 0;
@@ -218,6 +223,7 @@ export const Description = styled.div`
   border-bottom-right-radius: 30px;
   border-bottom-left-radius: 30px;
   padding-left: 20px;
+  padding-bottom:2rem;
 `;
 
 

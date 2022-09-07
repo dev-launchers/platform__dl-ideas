@@ -28,6 +28,7 @@ export const ButtonArea = styled.div`
   align-items: flex-start;
   margin-left: auto;
   margin-right: auto;
+  margin-bottom: 10vh;
 
   @media (orientation: portrait) {
     flex-direction: column;
