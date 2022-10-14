@@ -42,7 +42,6 @@ function SubmitIdeaForm() {
   const [difficultyLevel, setDifficultyLevel] = useState("Beginner");
   const [discord, setDiscord] = useState("");
   const [email, setEmail] = useState("");
-  const [calendly, setCalendly] = useState("");
   const [features, setFeatures] = useState("");
   const [experience, setExperience] = useState("");
   //const [timeStamp, setTimeStamp] = useState(new Date());
@@ -68,7 +67,6 @@ function SubmitIdeaForm() {
       difficultyLevel: difficultyLevel,
       discord: discord,
       email: email,
-      calendly: calendly,
       features: features,
       experience: experience,
     };
@@ -84,7 +82,6 @@ function SubmitIdeaForm() {
       setSelected("submited");
       setDiscord("");
       setEmail("");
-      setCalendly("");
       setFeatures("");
       setExperience("");
       setSending(false);
@@ -164,19 +161,6 @@ function SubmitIdeaForm() {
                   name="email"
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
-                />
-              </Question>
-              <Question>
-                <p>
-                  Do you have a Calendly? If so add a link here, if not it’s
-                  okay!
-                </p>
-                <input
-                  required
-                  type="text"
-                  name="calendly"
-                  value={calendly}
-                  onChange={(e) => setCalendly(e.target.value)}
                 />
               </Question>
               <Question2>
